@@ -12,11 +12,11 @@ function App() {
   const [formStatus, setFormStatus] = useState('');
   const [scrollY, setScrollY] = useState(0);
 
-  // Фиксированная темная тема (кнопка переключения убрана)
+  // Профессиональная темная тема
   const theme = {
-    bg: '#0a0a0a',
-    primary: '#00f5ff',
-    secondary: '#ff0080',
+    bg: '#1a1a1a',
+    primary: '#4a9eff',
+    secondary: '#6c5ce7',
     text: '#ffffff',
     accent: '#b0b0b0'
   };
@@ -58,9 +58,9 @@ function App() {
 
   // Социальные сети с реальными ссылками
       const socialLinks = [
-      { name: 'GitHub', url: 'https://github.com/Malfade', icon: '🐙' },
-      { name: 'LinkedIn', url: 'https://linkedin.com/in/your-profile', icon: '💼' },
-      { name: 'Telegram', url: 'https://t.me/your-username', icon: '📱' }
+      { name: 'GitHub', url: 'https://github.com/Malfade', icon: 'GitHub' },
+      { name: 'LinkedIn', url: 'https://linkedin.com/in/nikita-cybersecurity', icon: 'LinkedIn' },
+      { name: 'Telegram', url: 'https://t.me/MalfyRose', icon: 'Telegram' }
     ];
 
   if (loading) {
@@ -68,35 +68,35 @@ function App() {
   }
 
   const skills = [
-    { name: 'JavaScript', level: 90, color: '#ff0080' },
-    { name: 'React', level: 85, color: '#00f5ff' },
-    { name: 'Vue.js', level: 80, color: '#00ff41' },
-    { name: 'Node.js', level: 85, color: '#8a2be2' },
-    { name: 'Python', level: 80, color: '#ffff00' },
-    { name: 'HTML/CSS', level: 95, color: '#ff6b35' },
-    { name: 'Claude AI', level: 90, color: '#00f5ff' },
-    { name: 'OpenAI API', level: 85, color: '#ff0080' },
-    { name: 'MongoDB', level: 75, color: '#00ff41' },
-    { name: 'MySQL', level: 80, color: '#8a2be2' },
-    { name: 'Git/GitHub', level: 85, color: '#ffff00' },
-    { name: 'Figma', level: 85, color: '#ff6b35' }
+    { name: 'JavaScript', level: 90, color: '#4a9eff' },
+    { name: 'React', level: 85, color: '#61dafb' },
+    { name: 'Vue.js', level: 80, color: '#4fc08d' },
+    { name: 'Node.js', level: 85, color: '#339933' },
+    { name: 'Python', level: 80, color: '#3776ab' },
+    { name: 'HTML/CSS', level: 95, color: '#e34c26' },
+    { name: '3D Modeling', level: 75, color: '#ff6b35' },
+    { name: 'Cybersecurity', level: 70, color: '#6c5ce7' },
+    { name: 'Blender', level: 70, color: '#f5792a' },
+    { name: 'Network Security', level: 65, color: '#8e44ad' },
+    { name: 'Git/GitHub', level: 85, color: '#f05033' },
+    { name: 'Project Management', level: 80, color: '#2c3e50' }
   ];
 
   const projects = [
     {
-      title: "INFRAMAP 🏆",
-      description: "🥇 ПОБЕДИТЕЛЬ хакатона по цифровизации государственного управления в КГТУ им. Разакова, Бишкек (27-29 мая 2024). Интерактивная веб-платформа для оптимизации размещения государственных учреждений (школы, больницы, пожарные станции) с использованием пространственного анализа и машинного обучения. Система решает задачи оптимизации инфраструктуры на основе анализа географических данных.",
+      title: "INFRAMAP",
+      description: "ПОБЕДИТЕЛЬ хакатона по цифровизации государственного управления в КГТУ им. Разакова, Бишкек (27-29 мая 2024). Интерактивная веб-платформа для оптимизации размещения государственных учреждений (школы, больницы, пожарные станции) с использованием пространственного анализа и машинного обучения. Система решает задачи оптимизации инфраструктуры на основе анализа географических данных.",
       tech: ["React", "Django", "Python", "JavaScript", "OpenStreetMap"],
       role: "Fullstack разработка • Геопространственный анализ • UI/UX • Архитектура",
-      achievement: "🏆 1-е место • 100,000 сом • КГТУ им. Разакова",
+      achievement: "1-е место • 100,000 сом • КГТУ им. Разакова",
       github: "https://github.com/Num1s/infra-map"
     },
     {
-      title: "JAPAN DIGITAL UNIVERSITY 🎌",
+      title: "JAPAN DIGITAL UNIVERSITY",
       description: "Разработка официального веб-сайта для Japan Digital University (JDU) - первого японского цифрового университета в Узбекистане. Университет создан в рамках сотрудничества между Узбекистаном и Японией для подготовки IT-специалистов по японским стандартам и трудоустройства в японских компаниях. Проект включает многоязычную поддержку, систему подачи документов и интеграцию с образовательными платформами.",
       tech: ["React", "Node.js", "MongoDB", "i18n", "Responsive Design"],
       role: "Frontend разработка • UI/UX дизайн • Многоязычная локализация",
-      status: "🚧 В РАЗРАБОТКЕ",
+      status: "В РАЗРАБОТКЕ",
       website: "https://jdu.uz"
     }
   ];
@@ -105,22 +105,19 @@ function App() {
     <div className="App" style={{
       background: theme.bg,
       color: theme.text,
-      fontFamily: '"Orbitron", monospace'
+      fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif'
     }}>
-      {/* Футуристичная навигация */}
+      {/* Навигация */}
       <nav style={{
         position: 'fixed',
         top: 0,
         left: 0,
         width: '100%',
-        background: 'rgba(10, 10, 10, 0.9)',
+        background: 'rgba(26, 26, 26, 0.95)',
         backdropFilter: 'blur(20px)',
         padding: '1.5rem 2rem',
         zIndex: 1000,
-        border: '1px solid rgba(0, 245, 255, 0.2)',
-        borderTop: 'none',
-        borderLeft: 'none',
-        borderRight: 'none'
+        borderBottom: `1px solid ${theme.primary}30`
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -130,30 +127,24 @@ function App() {
           alignItems: 'center'
         }}>
           <h2 style={{
-            background: 'linear-gradient(45deg, #00f5ff, #ff0080)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            color: theme.primary,
             fontSize: '1.8rem',
             fontWeight: '700',
-            textShadow: '0 0 10px #00f5ff',
             letterSpacing: '0.1em'
           }}>
             &lt;DEV/&gt;
           </h2>
           
           <div style={{ display: 'flex', gap: '2rem' }}>
-            {['ГЛАВНАЯ', 'ПРОФИЛЬ', 'НАВЫКИ', 'ПРОЕКТЫ', 'ДОСТИЖЕНИЯ', 'КОНТАКТ'].map(item => (
+            {['Главная', 'Профиль', 'Навыки', 'Проекты', 'Достижения', 'Контакты'].map(item => (
               <a key={item} href={`#${item.toLowerCase()}`} style={{
                 textDecoration: 'none',
-                color: theme.primary,
+                color: theme.text,
                 fontWeight: '500',
-                fontSize: '0.9rem',
-                letterSpacing: '0.1em',
+                fontSize: '1rem',
                 transition: 'all 0.3s ease',
-                textShadow: '0 0 5px rgba(0, 245, 255, 0.5)',
-                border: '1px solid transparent',
                 padding: '0.5rem 1rem',
-                borderRadius: '5px'
+                borderRadius: '8px'
               }}>
                 {item}
               </a>
@@ -172,20 +163,7 @@ function App() {
         position: 'relative',
         overflow: 'hidden'
       }}>
-        {/* Анимированные частицы */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: `
-            radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)
-          `,
-          animation: 'float 6s ease-in-out infinite'
-        }}></div>
+
 
         <div style={{
           maxWidth: '1200px',
@@ -196,34 +174,101 @@ function App() {
           gap: '5rem',
           alignItems: 'center',
           width: '100%',
-          zIndex: 1
+          zIndex: 3,
+          position: 'relative'
         }}>
           <div>
+            {/* Встроенная карточка как часть контента */}
             <div style={{
-              fontSize: '1.2rem',
-              color: theme.primary,
-              marginBottom: '1rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.3em',
-              textShadow: '0 0 10px #00f5ff'
-            }}>
-              SYSTEM ONLINE
-            </div>
-            
-            <h1 style={{
-              fontSize: '4rem',
-              fontWeight: '700',
+              background: 'rgba(30, 30, 30, 0.8)',
+              border: `2px solid ${theme.secondary}40`,
+              borderRadius: '15px',
+              padding: '2rem',
               marginBottom: '2rem',
-              lineHeight: '1.1',
-              textShadow: '0 0 20px rgba(0, 245, 255, 0.5)'
+              display: 'flex',
+              alignItems: 'center',
+              gap: '2rem',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+              backdropFilter: 'blur(10px)'
             }}>
-              FULLSTACK <span style={{
-                background: 'linear-gradient(45deg, #ff0080, #00f5ff)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                textShadow: 'none'
-              }}>AI-ИНТЕГРАТОР</span>
-            </h1>
+              {/* Левая часть - текст */}
+              <div style={{ flex: 1 }}>
+                <div style={{
+                  fontSize: '1rem',
+                  color: theme.primary,
+                  marginBottom: '0.5rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.2em',
+                  textShadow: '0 0 10px #00f5ff'
+                }}>
+                  SYSTEM ONLINE
+                </div>
+                <h2 style={{
+                  fontSize: '2rem',
+                  fontWeight: '700',
+                  color: '#ffffff',
+                  marginBottom: '0.5rem',
+                  textShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
+                }}>
+                  NIKITA
+                </h2>
+                <h3 style={{
+                  fontSize: '1rem',
+                  color: '#00f5ff',
+                  marginBottom: '0.5rem',
+                  fontWeight: '600'
+                }}>
+                  CYBERSECURITY SPECIALIST
+                </h3>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: '#b0b0b0',
+                  marginBottom: '1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem'
+                }}>
+                  @MalfyRose
+                </p>
+                <div style={{
+                  display: 'flex',
+                  gap: '0.5rem',
+                  flexWrap: 'wrap'
+                }}>
+                  <span style={{
+                    background: 'rgba(0, 245, 255, 0.1)',
+                    color: '#00f5ff',
+                    padding: '0.2rem 0.6rem',
+                    borderRadius: '8px',
+                    fontSize: '0.7rem',
+                    border: '1px solid rgba(0, 245, 255, 0.3)'
+                  }}>
+                    3D Modeling
+                  </span>
+                  <span style={{
+                    background: 'rgba(255, 0, 128, 0.1)',
+                    color: '#ff0080',
+                    padding: '0.2rem 0.6rem',
+                    borderRadius: '8px',
+                    fontSize: '0.7rem',
+                    border: '1px solid rgba(255, 0, 128, 0.3)'
+                  }}>
+                    Web Dev
+                  </span>
+                  <span style={{
+                    background: 'rgba(0, 255, 65, 0.1)',
+                    color: '#00ff41',
+                    padding: '0.2rem 0.6rem',
+                    borderRadius: '8px',
+                    fontSize: '0.7rem',
+                    border: '1px solid rgba(0, 255, 65, 0.3)'
+                  }}>
+                    Artrap Finalist
+                  </span>
+                </div>
+              </div>
+              
+            </div>
             
             <p style={{
               fontSize: '1.3rem',
@@ -232,8 +277,8 @@ function App() {
               lineHeight: '1.6',
               color: theme.accent
             }}>
-              Быстро запускаю рабочие MVP, интегрирую ИИ в продукты 
-              и создаю решения для реальных задач
+              Специализируюсь в кибербезопасности, 3D моделировании и веб-разработке. 
+              Финалист Artrap Nation Кыргызстана, организатор DevClub и проджект-менеджер
             </p>
 
             {/* AI Dev Studio Badge */}
@@ -242,26 +287,26 @@ function App() {
               alignItems: 'center',
               gap: '1rem',
               padding: '1rem 2rem',
-              background: 'rgba(0, 245, 255, 0.1)',
-              border: '2px solid rgba(0, 245, 255, 0.3)',
-              borderRadius: '0',
+              background: `${theme.primary}20`,
+              border: `2px solid ${theme.primary}40`,
+              borderRadius: '15px',
               marginBottom: '3rem',
-              clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
               backdropFilter: 'blur(10px)',
-              boxShadow: '0 0 20px rgba(0, 245, 255, 0.2)'
+              boxShadow: `0 0 20px ${theme.primary}20`
             }}>
               <div style={{
                 width: '40px',
                 height: '40px',
-                background: 'linear-gradient(45deg, #00f5ff, #ff0080)',
+                background: theme.primary,
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.2rem',
-                animation: 'rotate 10s linear infinite'
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                color: '#fff'
               }}>
-                🤖
+                AI
               </div>
               <div>
                 <div style={{
@@ -271,14 +316,14 @@ function App() {
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase'
                 }}>
-                  AI Dev Studio
+                  CYBERSECURITY SPECIALIST
                 </div>
                 <div style={{
                   fontSize: '0.9rem',
                   color: '#b0b0b0',
                   opacity: 0.8
                 }}>
-                  Lead Developer & Designer
+                 Project Manager & Developer & Analyst
                 </div>
               </div>
             </div>
@@ -286,19 +331,17 @@ function App() {
             <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '3rem' }}>
               <button style={{
                 padding: '1.2rem 2.5rem',
-                background: 'linear-gradient(45deg, #00f5ff, #ff0080)',
-                color: '#000',
+                background: theme.primary,
+                color: '#fff',
                 border: 'none',
-                borderRadius: '0',
+                borderRadius: '8px',
                 fontSize: '1rem',
                 fontWeight: '700',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                fontFamily: '"Orbitron", monospace',
-                boxShadow: '0 0 20px rgba(0, 245, 255, 0.5)',
-                clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
+                fontFamily: '"Orbitron", monospace'
               }}>
                 ПРОЕКТЫ
               </button>
@@ -310,22 +353,20 @@ function App() {
                   padding: '1.2rem 2.5rem',
                   background: 'transparent',
                   color: theme.primary,
-                  border: '2px solid #00f5ff',
-                  borderRadius: '0',
+                  border: `2px solid ${theme.primary}`,
+                  borderRadius: '8px',
                   fontSize: '1rem',
                   fontWeight: '700',
                   cursor: 'pointer',
-                  backdropFilter: 'blur(10px)',
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  fontFamily: '"Orbitron", monospace',
+                  fontFamily: 'inherit',
                   transition: 'all 0.3s ease',
-                  clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)',
                   textDecoration: 'none',
                   display: 'inline-block'
                 }}
               >
-                📡 СКАЧАТЬ CV
+                СКАЧАТЬ CV
               </a>
             </div>
 
@@ -340,15 +381,15 @@ function App() {
                   style={{
                     width: '50px',
                     height: '50px',
-                    border: '2px solid #00f5ff',
+                    border: `2px solid ${theme.primary}`,
+                    borderRadius: '8px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)',
                     color: theme.primary,
-                    fontSize: '1.2rem',
+                    fontSize: '0.8rem',
                     fontWeight: '600',
                     textDecoration: 'none',
                     position: 'relative'
@@ -380,18 +421,18 @@ function App() {
             <div style={{
               width: '450px',
               height: '450px',
-              background: 'linear-gradient(45deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 128, 0.1))',
-              clipPath: 'polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%)',
+              background: 'rgba(74, 158, 255, 0.1)',
+              borderRadius: '15px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '2px solid rgba(0, 245, 255, 0.3)',
+              border: `2px solid ${theme.primary}40`,
               position: 'relative',
               overflow: 'hidden',
-              animation: 'glow 2s ease-in-out infinite alternate'
+              zIndex: 3
             }}>
               <img 
-                src="/images/profile.jpg" 
+                src="/images/photo_2025-09-29_19-18-24.jpg" 
                 alt="Developer Profile" 
                 style={{
                   width: '100%',
@@ -428,22 +469,19 @@ function App() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{
-              fontSize: '3.5rem',
+              fontSize: '3rem',
               fontWeight: '700',
               color: theme.primary,
-              marginBottom: '1rem',
-              textShadow: '0 0 20px #00f5ff',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
+              marginBottom: '1rem'
             }}>
-              ПРОФИЛЬ СИСТЕМЫ
+              Профиль
             </h2>
             <div style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #00f5ff, #ff0080)',
+              background: theme.primary,
               margin: '0 auto',
-              boxShadow: '0 0 10px #00f5ff'
+              borderRadius: '2px'
             }}></div>
           </div>
 
@@ -465,32 +503,19 @@ function App() {
                   height: '200px',
                   position: 'relative'
                 }}>
-                  {/* Внешнее неоновое кольцо */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '-8px',
-                    left: '-8px',
-                    width: '216px',
-                    height: '216px',
-                    clipPath: 'polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%)',
-                    background: 'linear-gradient(45deg, #00f5ff, #ff0080, #FFD700)',
-                    animation: 'rotate 8s linear infinite',
-                    filter: 'blur(1px)',
-                    opacity: 0.6
-                  }}></div>
                   
                   {/* Основной контейнер */}
                   <div style={{
                     width: '200px',
                     height: '200px',
-                    clipPath: 'polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%)',
+                    borderRadius: '15px',
                     overflow: 'hidden',
-                    border: '2px solid #00f5ff',
-                    boxShadow: '0 0 30px rgba(0, 245, 255, 0.4), inset 0 0 20px rgba(0, 245, 255, 0.1)',
+                    border: `2px solid ${theme.primary}`,
+                    boxShadow: `0 0 20px ${theme.primary}40`,
                     position: 'relative'
                   }}>
                     <img 
-                      src="/images/profile.jpg" 
+                      src="/images/photo_2025-09-29_19-18-24.jpg" 
                       alt="Profile" 
                       style={{
                         width: '100%',
@@ -513,94 +538,16 @@ function App() {
                       mixBlendMode: 'overlay'
                     }}></div>
                     
-                    {/* Сканирующие линии */}
-                    <div style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      background: `
-                        repeating-linear-gradient(
-                          0deg,
-                          transparent,
-                          transparent 2px,
-                          rgba(0, 245, 255, 0.1) 2px,
-                          rgba(0, 245, 255, 0.1) 4px
-                        )
-                      `,
-                      animation: 'scanlines 3s linear infinite'
-                    }}></div>
-                    
-                    {/* Голографическая сетка */}
-                    <div style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      background: `
-                        linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px),
-                        linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px)
-                      `,
-                      backgroundSize: '15px 15px',
-                      opacity: 0.4
-                    }}></div>
                   </div>
                   
-                  {/* Угловые индикаторы */}
-                  <div style={{
-                    position: 'absolute',
-                    top: '8px',
-                    left: '8px',
-                    width: '25px',
-                    height: '25px',
-                    border: '2px solid #00f5ff',
-                    borderRight: 'none',
-                    borderBottom: 'none',
-                    boxShadow: '0 0 10px #00f5ff'
-                  }}></div>
-                  <div style={{
-                    position: 'absolute',
-                    top: '8px',
-                    right: '8px',
-                    width: '25px',
-                    height: '25px',
-                    border: '2px solid #00f5ff',
-                    borderLeft: 'none',
-                    borderBottom: 'none',
-                    boxShadow: '0 0 10px #00f5ff'
-                  }}></div>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '8px',
-                    left: '8px',
-                    width: '25px',
-                    height: '25px',
-                    border: '2px solid #00f5ff',
-                    borderRight: 'none',
-                    borderTop: 'none',
-                    boxShadow: '0 0 10px #00f5ff'
-                  }}></div>
-                  <div style={{
-                    position: 'absolute',
-                    bottom: '8px',
-                    right: '8px',
-                    width: '25px',
-                    height: '25px',
-                    border: '2px solid #00f5ff',
-                    borderLeft: 'none',
-                    borderTop: 'none',
-                    boxShadow: '0 0 10px #00f5ff'
-                  }}></div>
                 </div>
               </div>
 
               <div style={{
-                background: 'rgba(0, 245, 255, 0.05)',
-                border: '1px solid rgba(0, 245, 255, 0.2)',
+                background: `${theme.primary}10`,
+                border: `1px solid ${theme.primary}30`,
+                borderRadius: '15px',
                 padding: '3rem',
-                clipPath: 'polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%)',
                 marginBottom: '2rem'
               }}>
                 <p style={{
@@ -618,10 +565,11 @@ function App() {
                   lineHeight: '1.8',
                   color: theme.text
                 }}>
-                  Я — начинающий fullstack-разработчик и AI-интегратор. Люблю быстро запускать рабочие MVP, 
-                  участвую в хакатонах и стараюсь делать не просто «приложения», а решения, которые решают конкретную задачу.
+                  Я — специалист по кибербезопасности, 3D моделированию и веб-разработке. 
+                  Активно развиваюсь в области информационной безопасности и создаю инновационные решения.
                   <br/><br/>
-                  Учусь на ходу, не боюсь нового стека и активно развиваюсь в области ИИ и кибербезопасности.
+                  Финалист Artrap Nation Кыргызстана, организатор DevClub в колледже и проджект-менеджер 
+                  по разработке интранета для колледжа. Учусь на ходу и не боюсь новых вызовов.
                 </p>
                 
                 {/* Информация о профессиональной деятельности */}
@@ -634,12 +582,12 @@ function App() {
                   
                   {/* AI Dev Studio */}
                   <div style={{
-                    background: 'linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 128, 0.05))',
-                    border: '2px solid rgba(0, 245, 255, 0.3)',
+                    background: `${theme.primary}15`,
+                    border: `2px solid ${theme.primary}40`,
+                    borderRadius: '15px',
                     padding: '2rem',
-                    clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
                     position: 'relative',
-                    boxShadow: '0 10px 30px rgba(0, 245, 255, 0.1)'
+                    boxShadow: `0 10px 30px ${theme.primary}20`
                   }}>
                     <div style={{
                       display: 'flex',
@@ -655,10 +603,11 @@ function App() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: '1.3rem',
-                        animation: 'pulse 2s ease-in-out infinite'
+                        fontSize: '0.8rem',
+                        fontWeight: 'bold',
+                        color: '#000'
                       }}>
-                        🤖
+                        AI
                       </div>
                       <div>
                         <div style={{
@@ -721,12 +670,12 @@ function App() {
                     </a>
                   </div>
 
-                  {/* KRJC */}
+                  {/* Artrap Nation */}
                   <div style={{
-                    background: 'rgba(255, 215, 0, 0.1)',
-                    border: '2px solid rgba(255, 215, 0, 0.3)',
+                    background: `${theme.secondary}15`,
+                    border: `2px solid ${theme.secondary}40`,
+                    borderRadius: '15px',
                     padding: '2rem',
-                    clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
                     position: 'relative'
                   }}>
                     <div style={{
@@ -738,32 +687,34 @@ function App() {
                       <div style={{
                         width: '45px',
                         height: '45px',
-                        background: 'linear-gradient(45deg, #FFD700, #FFA500)',
+                        background: 'linear-gradient(45deg, #ff0080, #ff6b35)',
                         borderRadius: '50%',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: '1.3rem'
+                        fontSize: '0.8rem',
+                        fontWeight: 'bold',
+                        color: '#fff'
                       }}>
-                        🇯🇵
+                        AR
                       </div>
                       <div>
                         <div style={{
                           fontSize: '1.2rem',
-                          color: '#FFD700',
+                          color: '#ff0080',
                           fontWeight: '700',
                           textTransform: 'uppercase',
                           letterSpacing: '0.1em',
-                          textShadow: '0 0 10px #FFD700'
+                          textShadow: '0 0 10px #ff0080'
                         }}>
-                          KRJC
+                          STARTAP NATION
                         </div>
                         <div style={{
                           fontSize: '0.85rem',
                           color: '#b0b0b0',
                           opacity: 0.8
                         }}>
-                          Стажировка • Кыргызско-Японский центр
+                          Финалист • Кыргызстан
                         </div>
                       </div>
                     </div>
@@ -774,9 +725,8 @@ function App() {
                       color: theme.accent,
                       marginBottom: '1rem'
                     }}>
-                      Стажировка в Кыргызско-Японском центре человеческого развития - уникальной платформе, 
-                      объединяющей Кыргызстан и Японию в бизнесе, образовании и культурном обмене. 
-                      Центр работает под эгидой JICA более 25 лет.
+                      Прошел в финал Startrap Nation Кыргызстана - крупнейшего музыкального конкурса в стране. 
+                      Демонстрирую таланты не только в IT, но и в творческих направлениях.
                     </p>
                     
                     <div style={{
@@ -785,9 +735,80 @@ function App() {
                       flexWrap: 'wrap',
                       fontSize: '0.8rem'
                     }}>
-                      <span style={{ color: '#FFD700', background: 'rgba(255, 215, 0, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🏢 Деловые кадры</span>
-                      <span style={{ color: '#FFA500', background: 'rgba(255, 165, 0, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🇯🇵 Японские методы</span>
-                      <span style={{ color: '#FF6347', background: 'rgba(255, 99, 71, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>📚 Образование</span>
+                      <span style={{ color: '#ff0080', background: 'rgba(255, 0, 128, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🎤 Музыка</span>
+                      <span style={{ color: '#ff6b35', background: 'rgba(255, 107, 53, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🏆 Финалист</span>
+                      <span style={{ color: '#8a2be2', background: 'rgba(138, 43, 226, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🇰🇬 Кыргызстан</span>
+                    </div>
+                  </div>
+
+                  {/* DevClub */}
+                  <div style={{
+                    background: '#4fc08d20',
+                    border: '2px solid #4fc08d40',
+                    borderRadius: '15px',
+                    padding: '2rem',
+                    position: 'relative'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '1rem',
+                      marginBottom: '1.5rem'
+                    }}>
+                      <div style={{
+                        width: '45px',
+                        height: '45px',
+                        background: 'linear-gradient(45deg, #00ff41, #00f5ff)',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '0.8rem',
+                        fontWeight: 'bold',
+                        color: '#000'
+                      }}>
+                        DC
+                      </div>
+                      <div>
+                        <div style={{
+                          fontSize: '1.2rem',
+                          color: '#00ff41',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.1em',
+                          textShadow: '0 0 10px #00ff41'
+                        }}>
+                          DEVCLUB
+                        </div>
+                        <div style={{
+                          fontSize: '0.85rem',
+                          color: '#b0b0b0',
+                          opacity: 0.8
+                        }}>
+                          Организатор • Проджект-менеджер
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p style={{
+                      fontSize: '0.95rem',
+                      lineHeight: '1.6',
+                      color: theme.accent,
+                      marginBottom: '1rem'
+                    }}>
+                      Организую клуб разработки DevClub в колледже и руковожу проектом по созданию интранета 
+                      для колледжа. Развиваю IT-сообщество и управляю техническими проектами.
+                    </p>
+                    
+                    <div style={{
+                      display: 'flex',
+                      gap: '0.8rem',
+                      flexWrap: 'wrap',
+                      fontSize: '0.8rem'
+                    }}>
+                      <span style={{ color: '#00ff41', background: 'rgba(0, 255, 65, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>👥 Лидерство</span>
+                      <span style={{ color: '#00f5ff', background: 'rgba(0, 245, 255, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>🌐 Интранет</span>
+                      <span style={{ color: '#8a2be2', background: 'rgba(138, 43, 226, 0.1)', padding: '0.3rem 0.8rem', borderRadius: '12px' }}>📚 Образование</span>
                     </div>
                   </div>
                 </div>
@@ -796,33 +817,25 @@ function App() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               {[
-                { icon: '🔧', title: 'ПРАКТИК', desc: 'Быстро собираю работающие прототипы' },
-                { icon: '🧠', title: 'САМОУЧКА', desc: 'Изучаю стек по мере надобности' },
-                { icon: '🧪', title: 'ЭКСПЕРИМЕНТАТОР', desc: 'Люблю новые технологии, особенно AI' },
-                { icon: '🛠', title: 'ИНЖЕНЕР ПО ДУХУ', desc: 'Важно, чтобы проект работал и решал проблему' },
-                { icon: '⚔', title: 'ХАКАТОН-БОЕЦ', desc: 'В условиях ограничений чувствую себя как дома' }
+                { title: 'ПРАКТИК', desc: 'Быстро собираю работающие прототипы' },
+                { title: 'САМОУЧКА', desc: 'Изучаю стек по мере надобности' },
+                { title: 'ЭКСПЕРИМЕНТАТОР', desc: 'Люблю новые технологии, особенно AI' },
+                { title: 'ИНЖЕНЕР ПО ДУХУ', desc: 'Важно, чтобы проект работал и решал проблему' },
+                { title: 'ХАКАТОН-БОЕЦ', desc: 'В условиях ограничений чувствую себя как дома' }
               ].map((item, index) => (
                 <div key={index} style={{
-                  background: 'rgba(255, 0, 128, 0.05)',
-                  border: '1px solid rgba(255, 0, 128, 0.2)',
+                  background: `${theme.secondary}10`,
+                  border: `1px solid ${theme.secondary}30`,
+                  borderRadius: '15px',
                   padding: '2.5rem',
-                  clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
                   cursor: 'pointer',
                   transition: 'all 0.3s ease'
                 }}>
-                  <div style={{ 
-                    fontSize: '3rem', 
-                    marginBottom: '1.5rem',
-                    filter: 'drop-shadow(0 0 10px #ff0080)'
-                  }}>
-                    {item.icon}
-                  </div>
                   <h3 style={{ 
                     fontSize: '1.4rem', 
                     fontWeight: '700', 
-                    color: '#ff0080', 
+                    color: theme.secondary, 
                     marginBottom: '1rem',
-                    textShadow: '0 0 10px rgba(255, 0, 128, 0.5)',
                     letterSpacing: '0.1em'
                   }}>
                     {item.title}
@@ -847,22 +860,19 @@ function App() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{
-              fontSize: '3.5rem',
+              fontSize: '3rem',
               fontWeight: '700',
-              color: '#ff0080',
-              marginBottom: '1rem',
-              textShadow: '0 0 20px #ff0080',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
-                          }}>
-                TECH STACK & ИНСТРУМЕНТЫ
-              </h2>
+              color: theme.secondary,
+              marginBottom: '1rem'
+            }}>
+              Навыки
+            </h2>
             <div style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #ff0080, #00f5ff)',
+              background: theme.secondary,
               margin: '0 auto',
-              boxShadow: '0 0 10px #ff0080'
+              borderRadius: '2px'
             }}></div>
           </div>
 
@@ -875,8 +885,8 @@ function App() {
               <div key={index} style={{
                 background: 'rgba(0, 0, 0, 0.5)',
                 border: `2px solid ${skill.color}40`,
+                borderRadius: '15px',
                 padding: '2rem',
-                clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
                 transition: 'all 0.3s ease'
               }}>
                 <div style={{
@@ -940,22 +950,19 @@ function App() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{
-              fontSize: '3.5rem',
+              fontSize: '3rem',
               fontWeight: '700',
-              color: '#00ff41',
-              marginBottom: '1rem',
-              textShadow: '0 0 20px #00ff41',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
-                          }}>
-                ПРОЕКТЫ & MVP
-              </h2>
+              color: '#4fc08d',
+              marginBottom: '1rem'
+            }}>
+              Проекты
+            </h2>
             <div style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #00ff41, #00f5ff)',
+              background: '#4fc08d',
               margin: '0 auto',
-              boxShadow: '0 0 10px #00ff41'
+              borderRadius: '2px'
             }}></div>
           </div>
 
@@ -967,22 +974,21 @@ function App() {
             {projects.map((project, index) => (
               <div key={index} style={{
                 background: 'rgba(0, 0, 0, 0.6)',
-                border: '2px solid rgba(0, 255, 65, 0.3)',
-                clipPath: 'polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%)',
+                border: `2px solid #4fc08d40`,
+                borderRadius: '15px',
                 overflow: 'hidden',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer'
               }}>
                 <div style={{
                   height: '250px',
-                  background: 'linear-gradient(45deg, rgba(0, 245, 255, 0.2), rgba(255, 0, 128, 0.2))',
+                  background: `${theme.primary}20`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#00f5ff',
+                  color: theme.primary,
                   fontSize: '4rem',
                   fontWeight: 'bold',
-                  textShadow: '0 0 20px #00f5ff',
                   position: 'relative'
                 }}>
                   <div style={{
@@ -1132,18 +1138,18 @@ function App() {
                         onClick={() => window.open(project.github, '_blank')}
                         style={{
                           padding: '1rem 2rem',
-                          border: '2px solid #00f5ff',
-                          color: '#00f5ff',
+                          border: `2px solid ${theme.primary}`,
+                          color: theme.primary,
                           background: 'transparent',
+                          borderRadius: '8px',
                           fontWeight: '700',
                           cursor: 'pointer',
                           transition: 'all 0.3s ease',
-                          fontFamily: '"Orbitron", monospace',
-                          letterSpacing: '0.1em',
-                          clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
+                          fontFamily: 'inherit',
+                          letterSpacing: '0.1em'
                         }}
                       >
-                        🐙 GITHUB
+                        GITHUB
                       </button>
                     )}
                     
@@ -1152,18 +1158,18 @@ function App() {
                         onClick={() => window.open(project.website, '_blank')}
                         style={{
                           padding: '1rem 2rem',
-                          background: 'linear-gradient(45deg, #00f5ff, #ff0080)',
-                          color: '#000',
+                          background: theme.primary,
+                          color: '#fff',
                           border: 'none',
+                          borderRadius: '8px',
                           fontWeight: '700',
                           cursor: 'pointer',
                           transition: 'all 0.3s ease',
-                          fontFamily: '"Orbitron", monospace',
-                          letterSpacing: '0.1em',
-                          clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
+                          fontFamily: 'inherit',
+                          letterSpacing: '0.1em'
                         }}
                       >
-                        🌐 САЙТ
+                        САЙТ
                       </button>
                     )}
                     
@@ -1173,15 +1179,15 @@ function App() {
                         background: 'rgba(100, 100, 100, 0.3)',
                         color: '#666',
                         border: '2px solid rgba(100, 100, 100, 0.3)',
+                        borderRadius: '8px',
                         fontWeight: '700',
                         cursor: 'not-allowed',
-                        fontFamily: '"Orbitron", monospace',
-                        letterSpacing: '0.1em',
-                        clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
+                        fontFamily: 'inherit',
+                        letterSpacing: '0.1em'
                       }}
                       disabled
                     >
-                      🚧 В РАЗРАБОТКЕ
+                      В РАЗРАБОТКЕ
                     </button>
                     )}
                   </div>
@@ -1205,22 +1211,19 @@ function App() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{
-              fontSize: '3.5rem',
+              fontSize: '3rem',
               fontWeight: '700',
               color: '#FFD700',
-              marginBottom: '1rem',
-              textShadow: '0 0 20px #FFD700',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
+              marginBottom: '1rem'
             }}>
-              🏆 ДОСТИЖЕНИЯ
+              Достижения
             </h2>
             <div style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #FFD700, #FFA500)',
+              background: '#FFD700',
               margin: '0 auto',
-              boxShadow: '0 0 10px #FFD700'
+              borderRadius: '2px'
             }}></div>
           </div>
 
@@ -1246,7 +1249,7 @@ function App() {
                   letterSpacing: '0.1em',
                   fontWeight: '700'
                 }}>
-                  🥇 ПОБЕДА НА ХАКАТОНЕ
+                  ПОБЕДА НА ХАКАТОНЕ
                 </h3>
                 
                 <div style={{
@@ -1257,16 +1260,16 @@ function App() {
                   border: '1px solid rgba(255, 215, 0, 0.2)'
                 }}>
                   <div style={{ color: '#FFD700', fontSize: '1.1rem', fontWeight: '600', marginBottom: '1rem' }}>
-                    📍 КГТУ им. И. Разакова, Бишкек
+                    КГТУ им. И. Разакова, Бишкек
                   </div>
                   <div style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '0.5rem' }}>
-                    📅 27-29 мая 2025
+                    27-29 мая 2025
                   </div>
                   <div style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '0.5rem' }}>
-                    🎯 Хакатон по цифровизации государственного управления
+                    Хакатон по цифровизации государственного управления
                   </div>
                   <div style={{ color: '#00ff41', fontSize: '1.2rem', fontWeight: '700', marginTop: '1rem' }}>
-                    💰 Призовой фонд: 100,000 сом
+                    Призовой фонд: 100,000 сом
                   </div>
                 </div>
 
@@ -1294,7 +1297,7 @@ function App() {
                     marginBottom: '1rem',
                     fontWeight: '600'
                   }}>
-                    🗺️ Ключевые особенности InfraMap:
+                    Ключевые особенности InfraMap:
                   </h4>
                   <ul style={{
                     color: '#ffffff',
@@ -1341,7 +1344,7 @@ function App() {
                        fontSize: '1rem',
                        fontWeight: '700',
                        cursor: 'pointer',
-                       fontFamily: '"Orbitron", monospace',
+                       fontFamily: 'inherit',
                        letterSpacing: '0.1em',
                        textTransform: 'uppercase',
                        clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
@@ -1349,7 +1352,7 @@ function App() {
                        boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)'
                      }}
                    >
-                     🔗 ПОСМОТРЕТЬ НА GITHUB
+                     ПОСМОТРЕТЬ НА GITHUB
                    </button>
                  </div>
                </div>
@@ -1571,22 +1574,19 @@ function App() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{
-              fontSize: '3.5rem',
+              fontSize: '3rem',
               fontWeight: '700',
-              color: '#ff0080',
-              marginBottom: '1rem',
-              textShadow: '0 0 20px #ff0080',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
+              color: theme.secondary,
+              marginBottom: '1rem'
             }}>
-              УСТАНОВИТЬ СВЯЗЬ
+              Контакты
             </h2>
             <div style={{
               width: '100px',
               height: '3px',
-              background: 'linear-gradient(90deg, #ff0080, #00f5ff)',
+              background: theme.secondary,
               margin: '0 auto',
-              boxShadow: '0 0 10px #ff0080'
+              borderRadius: '2px'
             }}></div>
           </div>
 
@@ -1625,9 +1625,9 @@ function App() {
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   {[
-                    { icon: '📡', label: 'EMAIL', value: 'dev@cyberportfolio.com' },
-                    { icon: '🌐', label: 'TELEGRAM', value: '@cyberdeveloper' },
-                    { icon: '📱', label: 'PHONE', value: '+7 (999) 123-45-67' }
+                    { icon: 'EMAIL', label: 'EMAIL', value: 'nikita.cybersecurity@dev.com' },
+                    { icon: 'TELEGRAM', label: 'TELEGRAM', value: '@MalfyRose' },
+                    { icon: 'PHONE', label: 'PHONE', value: '+996 (XXX) XXX-XXX' }
                   ].map((contact, index) => (
                     <div key={index} style={{
                       display: 'flex',
@@ -1638,7 +1638,7 @@ function App() {
                       border: '1px solid rgba(0, 245, 255, 0.2)',
                       clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
                     }}>
-                      <span style={{ fontSize: '1.5rem' }}>{contact.icon}</span>
+                      <span style={{ fontSize: '0.9rem', fontWeight: 'bold', color: '#00f5ff' }}>{contact.icon}</span>
                       <div>
                         <div style={{ 
                           color: '#00f5ff', 
@@ -1682,7 +1682,7 @@ function App() {
                   border: '1px solid rgba(0, 245, 255, 0.3)',
                   color: '#00f5ff',
                   textAlign: 'center',
-                  fontFamily: '"Orbitron", monospace',
+                  fontFamily: 'inherit',
                   letterSpacing: '0.1em',
                   clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
                 }}>
@@ -1704,7 +1704,7 @@ function App() {
                     color: '#ffffff',
                     padding: '1rem',
                     fontSize: '1rem',
-                    fontFamily: '"Orbitron", monospace',
+                    fontFamily: 'inherit',
                     letterSpacing: '0.05em',
                     clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
                   }}
@@ -1722,7 +1722,7 @@ function App() {
                     color: '#ffffff',
                     padding: '1rem',
                     fontSize: '1rem',
-                    fontFamily: '"Orbitron", monospace',
+                    fontFamily: 'inherit',
                     letterSpacing: '0.05em',
                     clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
                   }}
@@ -1740,7 +1740,7 @@ function App() {
                     color: '#ffffff',
                     padding: '1rem',
                     fontSize: '1rem',
-                    fontFamily: '"Orbitron", monospace',
+                    fontFamily: 'inherit',
                     letterSpacing: '0.05em',
                     resize: 'vertical',
                     clipPath: 'polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%)'
@@ -1758,14 +1758,14 @@ function App() {
                     fontSize: '1rem',
                     fontWeight: '700',
                     cursor: formStatus === 'ОТПРАВКА...' ? 'not-allowed' : 'pointer',
-                    fontFamily: '"Orbitron", monospace',
+                    fontFamily: 'inherit',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     clipPath: 'polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%)',
                     transition: 'all 0.3s ease'
                   }}
                 >
-                  {formStatus === 'ОТПРАВКА...' ? '⏳ ОТПРАВКА...' : '🚀 ПЕРЕДАТЬ СИГНАЛ'}
+                  {formStatus === 'ОТПРАВКА...' ? 'ОТПРАВКА...' : 'ПЕРЕДАТЬ СИГНАЛ'}
                 </button>
               </form>
             </div>
@@ -1811,83 +1811,40 @@ function App() {
         </div>
       </footer>
 
-      {/* Футуристичные CSS анимации */}
+      {/* Профессиональные CSS стили */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
-        @keyframes futuristicSpin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        
-        @keyframes neonLoadBar {
-          from { transform: translateX(-100%); }
-          to { transform: translateX(0); }
-        }
-        
-        @keyframes glow {
-          from { box-shadow: 0 0 30px #00f5ff; }
-          to { box-shadow: 0 0 50px #00f5ff, 0 0 70px #ff0080; }
-        }
-        
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-        
-        @keyframes pulse {
-          from { opacity: 0.8; }
+        @keyframes fadeIn {
+          from { opacity: 0; }
           to { opacity: 1; }
         }
         
-        @keyframes gridMove {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(20px, 20px); }
-        }
-
-        @keyframes scanlines {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100vh); }
-        }
-
-        @keyframes hologramScan {
-          0% { transform: translateY(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateY(100%); opacity: 0; }
-        }
-
-        @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        @keyframes slideUp {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
         }
         
-                 /* Hover эффекты */
+         /* Hover эффекты */
          button:hover {
-           transform: translateY(-3px);
-           box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3) !important;
+           transform: translateY(-2px);
+           opacity: 0.9;
          }
          
          nav a:hover {
-           background: rgba(0, 245, 255, 0.1) !important;
-           border: 1px solid rgba(0, 245, 255, 0.5) !important;
-           box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+           background: rgba(74, 158, 255, 0.1) !important;
+           color: #4a9eff !important;
          }
          
          div[style*="cursor: pointer"]:hover {
-           transform: translateY(-8px);
-           box-shadow: 0 15px 40px rgba(0, 245, 255, 0.2);
+           transform: translateY(-4px);
+           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
          }
          
          /* Эффекты для фото */
          img:hover {
-           filter: brightness(1.2) contrast(1.3) saturate(1.4) !important;
-           transform: scale(1.05);
-         }
-         
-         /* Анимация для главного фото */
-         div[style*="450px"]:hover {
+           filter: brightness(1.1) contrast(1.1) !important;
            transform: scale(1.02);
-           box-shadow: 0 0 50px rgba(0, 245, 255, 0.4), 0 0 100px rgba(255, 0, 128, 0.2);
          }
         
         /* Улучшенная адаптивность */
@@ -1989,16 +1946,16 @@ function App() {
         }
         
         ::-webkit-scrollbar-track {
-          background: #0a0a0a;
+          background: #1a1a1a;
         }
         
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(135deg, #00f5ff, #ff0080);
+          background: #4a9eff;
           border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-          background: linear-gradient(135deg, #ff0080, #00f5ff);
+          background: #6c5ce7;
         }
       `}</style>
 
