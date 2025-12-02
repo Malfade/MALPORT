@@ -92,7 +92,7 @@ const Contact = () => {
             >
               <FaEnvelope className="contact-icon" />
               <h3>Email</h3>
-              <p>your.email@example.com</p>
+              <p>nikitaundusk@gmail.com</p>
             </motion.div>
 
             <motion.div 
@@ -102,7 +102,7 @@ const Contact = () => {
             >
               <FaPhone className="contact-icon" />
               <h3>Телефон</h3>
-              <p>+7 (999) 123-45-67</p>
+              <p>+996 (550) 57 94 87</p>
             </motion.div>
 
             <motion.div 
@@ -112,14 +112,14 @@ const Contact = () => {
             >
               <FaMapMarkerAlt className="contact-icon" />
               <h3>Локация</h3>
-              <p>Москва, Россия</p>
+              <p>Бишкек Кыргызстан</p>
             </motion.div>
 
             <motion.div className="social-links" variants={itemVariants}>
               <h3>Социальные сети</h3>
               <div className="social-icons">
                 <motion.a
-                  href="https://t.me/username"
+                  href="https://t.me/MalfyRose"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -128,7 +128,7 @@ const Contact = () => {
                   <FaTelegram />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com/in/username"
+                  href="https://linkedin.com/in/nikita-cybersecurity"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -137,7 +137,7 @@ const Contact = () => {
                   <FaLinkedin />
                 </motion.a>
                 <motion.a
-                  href="https://github.com/username"
+                  href="https://github.com/Malfade"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}

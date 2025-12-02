@@ -101,7 +101,7 @@ const LoadingScreen = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="brand-badge">FULLSTACK AI</div>
-          <h1 className="main-title">PORTFOLIO SYSTEM</h1>
+          <h1 className="main-title">PENTESTER SYSTEM</h1>
           <div className="subtitle">v2025 • Optimized Edition</div>
         </motion.div>
 
@@ -132,7 +132,7 @@ const LoadingScreen = () => {
                 </motion.div>
               </div>
               <div className="logo-text">
-                <div className="primary-text">DEVELOPER</div>
+                <div className="primary-text">PENTESTER</div>
                 <div className="secondary-text">PORTFOLIO</div>
               </div>
             </motion.div>
@@ -205,7 +205,7 @@ const LoadingScreen = () => {
                 <span className="control-dot yellow"></span>
                 <span className="control-dot green"></span>
               </div>
-              <span className="terminal-title">AI@QUANTUM</span>
+              <span className="terminal-title">ALAYSOFT</span>
             </div>
             <div className="terminal-content">
               <div className="terminal-line">

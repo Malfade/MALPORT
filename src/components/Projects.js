@@ -47,7 +47,7 @@ const Projects = () => {
       description: "Современная платформа электронной коммерции с корзиной покупок, системой платежей и административной панелью.",
       image: "/api/placeholder/400/250",
       technologies: [FaReact, FaNode, SiMongodb, SiTailwindcss],
-      github: "https://github.com",
+      github: "https://github.com/Malfade",
       demo: "https://demo.com",
       featured: true
     },
@@ -57,7 +57,7 @@ const Projects = () => {
       description: "Аналитическая панель для управления социальными сетями с графиками, статистикой и планировщиком постов.",
       image: "/api/placeholder/400/250",
       technologies: [FaReact, FaJs, SiFirebase, SiTailwindcss],
-      github: "https://github.com",
+      github: "https://github.com/Malfade",
       demo: "https://demo.com",
       featured: true
     },
@@ -67,7 +67,7 @@ const Projects = () => {
       description: "Приложение для управления задачами с drag & drop, уведомлениями и командной работой.",
       image: "/api/placeholder/400/250",
       technologies: [FaReact, FaNode, SiMongodb],
-      github: "https://github.com",
+      github: "https://github.com/Malfade",
       demo: "https://demo.com",
       featured: false
     },
@@ -77,7 +77,7 @@ const Projects = () => {
       description: "Красивое погодное приложение с анимациями, прогнозом на неделю и геолокацией.",
       image: "/api/placeholder/400/250",
       technologies: [FaReact, FaJs, SiTailwindcss],
-      github: "https://github.com",
+      github: "https://github.com/Malfade",
       demo: "https://demo.com",
       featured: false
     }
@@ -165,7 +165,7 @@ const Projects = () => {
         >
           <p>Хотите увидеть больше проектов?</p>
           <motion.a
-            href="https://github.com"
+            href="https://github.com/Malfade"
             target="_blank"
             rel="noopener noreferrer"
             className="cta-button"

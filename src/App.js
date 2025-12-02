@@ -278,7 +278,7 @@ function App() {
               color: theme.accent
             }}>
               Специализируюсь в кибербезопасности, 3D моделировании и веб-разработке. 
-              Финалист Artrap Nation Кыргызстана, организатор DevClub и проджект-менеджер
+              Финалист Startup Nation Кыргызстана, организатор DevClub и проджект-менеджер
             </p>
 
             {/* AI Dev Studio Badge */}
@@ -696,7 +696,7 @@ function App() {
                         fontWeight: 'bold',
                         color: '#fff'
                       }}>
-                        AR
+                        ST
                       </div>
                       <div>
                         <div style={{
@@ -707,7 +707,7 @@ function App() {
                           letterSpacing: '0.1em',
                           textShadow: '0 0 10px #ff0080'
                         }}>
-                          STARTAP NATION
+                          STARTUP NATION
                         </div>
                         <div style={{
                           fontSize: '0.85rem',
@@ -725,7 +725,7 @@ function App() {
                       color: theme.accent,
                       marginBottom: '1rem'
                     }}>
-                      Прошел в финал Startrap Nation Кыргызстана - крупнейшего музыкального конкурса в стране. 
+                      Прошел в финал Startup Nation Кыргызстана - крупнейшего музыкального конкурса в стране. 
                       Демонстрирую таланты не только в IT, но и в творческих направлениях.
                     </p>
                     

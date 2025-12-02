@@ -102,11 +102,11 @@ const Hero = () => {
       >
         <motion.div className="hero-content" variants={itemVariants}>
           <motion.h1 className="hero-title" variants={itemVariants}>
-            Привет! Я <span className="highlight">Разработчик</span>
+            Привет! Я <span className="highlight">Пентестер</span>
           </motion.h1>
           
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Создаю современные веб-приложения с красивым дизайном и плавными анимациями
+            Проверяю современные веб-приложения на наличие уязвимостей и устраняю их
           </motion.p>
 
           <motion.div className="hero-buttons" variants={itemVariants}>
@@ -137,7 +137,7 @@ const Hero = () => {
 
           <motion.div className="hero-social" variants={itemVariants}>
             <motion.a
-              href="https://github.com"
+              href="https://github.com/Malfade"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 360 }}
@@ -147,7 +147,7 @@ const Hero = () => {
               <FaGithub />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/nikita-cybersecurity"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 360 }}
@@ -157,7 +157,7 @@ const Hero = () => {
               <FaLinkedin />
             </motion.a>
             <motion.a
-              href="https://t.me"
+              href="https://t.me/MalfyRose"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.2, rotate: 360 }}

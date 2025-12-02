@@ -60,7 +60,7 @@ const Footer = () => {
               <h4>Социальные сети</h4>
               <div className="footer-social">
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/Malfade"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -69,7 +69,7 @@ const Footer = () => {
                   <FaGithub />
                 </motion.a>
                 <motion.a
-                  href="https://t.me"
+                  href="https://t.me/MalfyRose"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -78,7 +78,7 @@ const Footer = () => {
                   <FaTelegram />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/nikita-cybersecurity"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, rotate: 360 }}
@@ -92,9 +92,9 @@ const Footer = () => {
             <div className="footer-section">
               <h4>Контакты</h4>
               <ul>
-                <li>your.email@example.com</li>
-                <li>+7 (999) 123-45-67</li>
-                <li>Москва, Россия</li>
+                <li>nikitaundusk@gmail.com</li>
+                <li>+996 (550) 57 94 87</li>
+                <li>Бишкек Кыргызстан</li>
               </ul>
             </div>
           </div>
