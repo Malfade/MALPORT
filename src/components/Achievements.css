@@ -1,0 +1,249 @@
+.achievements {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.achievement-card {
+    padding: 3rem;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.achievement-title {
+    font-size: 2.2rem;
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px var(--color-gold);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.achievement-info {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.info-label {
+    color: var(--color-gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.info-text {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-prize {
+    color: var(--color-green);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.achievement-description {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.highlight-gold {
+    color: var(--color-gold);
+}
+
+.highlight-cyan {
+    color: var(--color-cyan);
+}
+
+.features-box {
+    background: rgba(0, 245, 255, 0.1);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+.features-title {
+    color: var(--color-cyan);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.features-list {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+}
+
+.features-list li {
+    margin-bottom: 0.5rem;
+}
+
+.skills-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.skill-tag {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--color-gold);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    font-size: 0.9rem;
+    font-weight: 600;
+    clip-path: polygon(5px 0%, 100% 0%, calc(100% - 5px) 100%, 0% 100%);
+}
+
+.github-button {
+    padding: 1.2rem 2.5rem;
+    background: var(--gradient-gold);
+    color: #000;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+    transition: all var(--transition-normal);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.github-button:hover {
+    box-shadow: var(--shadow-glow-gold);
+    transform: translateY(-2px);
+}
+
+.achievement-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-frame {
+    width: 100%;
+    max-width: 500px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
+    position: relative;
+}
+
+.frame-corners {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-gold);
+    box-shadow: 0 0 10px var(--color-gold);
+}
+
+.corner-tl {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-tr {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-bl {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-br {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+.trophy-container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 3rem;
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    text-align: center;
+}
+
+.trophy-icon {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.2em;
+}
+
+.trophy-status {
+    color: var(--color-gold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.trophy-team {
+    color: var(--color-cyan);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px var(--color-cyan);
+}
+
+.trophy-location {
+    color: #ffffff;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 968px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

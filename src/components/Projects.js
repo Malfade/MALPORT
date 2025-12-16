@@ -1,183 +1,109 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaJs, FaNode } from 'react-icons/fa';
-import { SiTailwindcss, SiMongodb, SiFirebase } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.2 });
+    const projects = [
+        {
+            title: "INFRAMAP",
+            description: "ПОБЕДИТЕЛЬ хакатона по цифровизации государственного управления в КГТУ им. Разакова, Бишкек (27-29 мая 2024). Интерактивная веб-платформа для оптимизации размещения государственных учреждений (школы, больницы, пожарные станции) с использованием пространственного анализа и машинного обучения. Система решает задачи оптимизации инфраструктуры на основе анализа географических данных.",
+            tech: ["React", "Django", "Python", "JavaScript", "OpenStreetMap"],
+            role: "Fullstack разработка • Геопространственный анализ • UI/UX • Архитектура",
+            achievement: "1-е место • 100,000 сом • КГТУ им. Разакова",
+            github: "https://github.com/Num1s/infra-map"
+        },
+        {
+            title: "JAPAN DIGITAL UNIVERSITY",
+            description: "Разработка официального веб-сайта для Japan Digital University (JDU) - первого японского цифрового университета в Узбекистане. Университет создан в рамках сотрудничества между Узбекистаном и Японией для подготовки IT-специалистов по японским стандартам и трудоустройства в японских компаниях. Проект включает многоязычную поддержку, систему подачи документов и интеграцию с образовательными платформами.",
+            tech: ["React", "Node.js", "MongoDB", "i18n", "Responsive Design"],
+            role: "Frontend разработка • UI/UX дизайн • Многоязычная локализация",
+            status: "В РАЗРАБОТКЕ",
+            website: "https://jdu.uz"
+        }
+    ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
-  };
+    return (
+        <section id="projects" className="projects section">
+            <div className="container">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="section-title" style={{ color: '#4fc08d' }}>Проекты</h2>
+                    <div className="section-divider" style={{ background: '#4fc08d' }}></div>
+                </motion.div>
 
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.9 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      y: -10,
-      scale: 1.02,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
+                <div className="projects-grid">
+                    {projects.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            className="project-card glass"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                            whileHover={{ scale: 1.02 }}
+                        >
+                            <div className="project-preview">
+                                <div className="preview-overlay">
+                                    <span>HOLOGRAM<br />PREVIEW</span>
+                                </div>
+                            </div>
 
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "Современная платформа электронной коммерции с корзиной покупок, системой платежей и административной панелью.",
-      image: "/api/placeholder/400/250",
-      technologies: [FaReact, FaNode, SiMongodb, SiTailwindcss],
-      github: "https://github.com/Malfade",
-      demo: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Social Media Dashboard",
-      description: "Аналитическая панель для управления социальными сетями с графиками, статистикой и планировщиком постов.",
-      image: "/api/placeholder/400/250",
-      technologies: [FaReact, FaJs, SiFirebase, SiTailwindcss],
-      github: "https://github.com/Malfade",
-      demo: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Task Management App",
-      description: "Приложение для управления задачами с drag & drop, уведомлениями и командной работой.",
-      image: "/api/placeholder/400/250",
-      technologies: [FaReact, FaNode, SiMongodb],
-      github: "https://github.com/Malfade",
-      demo: "https://demo.com",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Weather App",
-      description: "Красивое погодное приложение с анимациями, прогнозом на неделю и геолокацией.",
-      image: "/api/placeholder/400/250",
-      technologies: [FaReact, FaJs, SiTailwindcss],
-      github: "https://github.com/Malfade",
-      demo: "https://demo.com",
-      featured: false
-    }
-  ];
+                            <div className="project-content">
+                                <h3 className="project-title">{project.title}</h3>
 
-  return (
-    <section id="projects" className="projects" ref={ref}>
-      <motion.div
-        className="projects-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <motion.div 
-          className="projects-header"
-          variants={{
-            hidden: { y: 50, opacity: 0 },
-            visible: { y: 0, opacity: 1, transition: { duration: 0.8 } }
-          }}
-        >
-          <h2>Проекты</h2>
-          <p>Некоторые из моих последних работ</p>
-        </motion.div>
+                                <p className="project-description">{project.description}</p>
 
-        <motion.div className="projects-grid" variants={containerVariants}>
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              className={`project-card ${project.featured ? 'featured' : ''}`}
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <div className="project-image">
-                <div className="image-placeholder">
-                  <span>Изображение проекта</span>
+                                {project.achievement && (
+                                    <div className="project-achievement">
+                                        <div className="achievement-label">ДОСТИЖЕНИЕ:</div>
+                                        <div className="achievement-text">{project.achievement}</div>
+                                    </div>
+                                )}
+
+                                {project.status && (
+                                    <div className="project-status">
+                                        <div className="status-label">СТАТУС:</div>
+                                        <div className="status-text">{project.status}</div>
+                                    </div>
+                                )}
+
+                                {project.role && (
+                                    <div className="project-role">
+                                        <div className="role-label">МОЯ РОЛЬ:</div>
+                                        <div className="role-text">{project.role}</div>
+                                    </div>
+                                )}
+
+                                <div className="project-tech">
+                                    {project.tech.map((tech, techIndex) => (
+                                        <span key={techIndex} className="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+
+                                <div className="project-links">
+                                    {project.github && (
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            <FaGithub /> GITHUB
+                                        </a>
+                                    )}
+                                    {project.website && (
+                                        <a href={project.website} target="_blank" rel="noopener noreferrer" className="project-link project-link-primary">
+                                            <FaExternalLinkAlt /> САЙТ
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-                {project.featured && (
-                  <div className="featured-badge">Рекомендуемый</div>
-                )}
-              </div>
-
-              <div className="project-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-
-                <div className="project-technologies">
-                  {project.technologies.map((Tech, index) => (
-                    <Tech key={index} className="tech-icon" />
-                  ))}
-                </div>
-
-                <div className="project-links">
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FaGithub /> Код
-                  </motion.a>
-                  <motion.a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link primary"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FaExternalLinkAlt /> Демо
-                  </motion.a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <motion.div 
-          className="projects-cta"
-          variants={{
-            hidden: { y: 50, opacity: 0 },
-            visible: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.4 } }
-          }}
-        >
-          <p>Хотите увидеть больше проектов?</p>
-          <motion.a
-            href="https://github.com/Malfade"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaGithub /> Посетить GitHub
-          </motion.a>
-        </motion.div>
-      </motion.div>
-    </section>
-  );
+            </div>
+        </section>
+    );
 };
 
-export default Projects; 
+export default Projects;

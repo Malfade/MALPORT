@@ -1,116 +1,174 @@
 .about {
-  padding: 100px 0;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  position: relative;
+    background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
 }
 
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
 }
 
-.about-header {
-  text-align: center;
-  margin-bottom: 4rem;
+.intro-card {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
 }
 
-.about-header h2 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.terminal-header {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.about-header p {
-  font-size: 1.2rem;
-  color: #666;
-  font-weight: 300;
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-cyan);
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+.terminal-dot:nth-child(2) {
+    background: var(--color-magenta);
 }
 
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #555;
-  margin-bottom: 1.5rem;
-  text-align: justify;
+.terminal-dot:nth-child(3) {
+    background: var(--color-green);
 }
 
-.about-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.terminal-text {
+    font-family: var(--font-mono);
+    color: var(--color-cyan);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
 }
 
-.about-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
+.intro-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
 }
 
-.card-icon {
-  font-size: 2.5rem;
-  color: #667eea;
-  margin-bottom: 1rem;
+.traits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-.about-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
+.trait-card {
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+    border: 1px solid rgba(108, 92, 231, 0.3);
 }
 
-.about-card p {
-  color: #666;
-  line-height: 1.6;
-  margin: 0;
+.trait-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-purple);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.trait-desc {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.activity-card {
+    padding: 2rem;
+    transition: all var(--transition-normal);
+}
+
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.activity-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000;
+    flex-shrink: 0;
+}
+
+.activity-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.activity-card:nth-child(1) .activity-title {
+    color: var(--color-cyan);
+}
+
+.activity-card:nth-child(2) .activity-title {
+    color: var(--color-magenta);
+}
+
+.activity-card:nth-child(3) .activity-title {
+    color: var(--color-green);
+}
+
+.activity-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.3rem;
+}
+
+.activity-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.activity-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.activity-tag {
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.activity-link {
+    font-size: 0.9rem;
+    color: var(--color-cyan);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity var(--transition-normal);
+    display: inline-block;
+}
+
+.activity-link:hover {
+    opacity: 1;
 }
 
 @media (max-width: 968px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-header h2 {
-    font-size: 2.5rem;
-  }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
-
-@media (max-width: 768px) {
-  .about {
-    padding: 80px 0;
-  }
-  
-  .about-container {
-    padding: 0 1rem;
-  }
-  
-  .about-header h2 {
-    font-size: 2rem;
-  }
-  
-  .about-text p {
-    font-size: 1rem;
-  }
-  
-  .about-card {
-    padding: 1.5rem;
-  }
-} 

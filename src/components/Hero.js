@@ -1,220 +1,157 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTelegram, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
-  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 });
+    const socialLinks = [
+        { name: 'GitHub', url: 'https://github.com/Malfade', icon: <FaGithub /> },
+        { name: 'LinkedIn', url: 'https://linkedin.com/in/nikita-cybersecurity', icon: <FaLinkedin /> },
+        { name: 'Telegram', url: 'https://t.me/MalfyRose', icon: <FaTelegram /> }
+    ];
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-    };
-
-    // Устанавливаем размеры окна при первом рендере
-    if (typeof window !== 'undefined') {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      });
-      window.addEventListener('resize', handleResize);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize);
-      }
-    };
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const buttonVariants = {
-    hover: {
-      scale: 1.05,
-      boxShadow: "0 10px 25px rgba(102, 126, 234, 0.4)",
-      transition: {
-        duration: 0.3
-      }
-    },
-    tap: {
-      scale: 0.95
-    }
-  };
-
-  return (
-    <section id="hero" className="hero">
-      <div className="hero-background">
-        <div className="hero-particles">
-          {[...Array(50)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="particle"
-              initial={{
-                x: Math.random() * windowSize.width,
-                y: Math.random() * windowSize.height,
-                opacity: 0
-              }}
-              animate={{
-                y: [0, -100, 0],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: Math.random() * 4 + 3,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <motion.div
-        className="hero-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.div className="hero-content" variants={itemVariants}>
-          <motion.h1 className="hero-title" variants={itemVariants}>
-            Привет! Я <span className="highlight">Пентестер</span>
-          </motion.h1>
-          
-          <motion.p className="hero-subtitle" variants={itemVariants}>
-            Проверяю современные веб-приложения на наличие уязвимостей и устраняю их
-          </motion.p>
-
-          <motion.div className="hero-buttons" variants={itemVariants}>
-            <motion.button
-              className="btn primary"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-              onClick={() => {
-                const projectsElement = document.getElementById('projects');
-                if (projectsElement) {
-                  projectsElement.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Мои проекты
-            </motion.button>
-            
-            <motion.button
-              className="btn secondary"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
-            >
-              <FaDownload /> Скачать CV
-            </motion.button>
-          </motion.div>
-
-          <motion.div className="hero-social" variants={itemVariants}>
-            <motion.a
-              href="https://github.com/Malfade"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 360 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-            >
-              <FaGithub />
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/nikita-cybersecurity"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 360 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-            >
-              <FaLinkedin />
-            </motion.a>
-            <motion.a
-              href="https://t.me/MalfyRose"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 360 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-            >
-              <FaTelegram />
-            </motion.a>
-          </motion.div>
-        </motion.div>
-
-        <motion.div className="hero-image" variants={itemVariants}>
-          <motion.div
-            className="image-container"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="image-placeholder">
-              <motion.div
-                className="code-animation"
-                animate={{
-                  opacity: [0.5, 1, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                &lt;/&gt;
-              </motion.div>
+    return (
+        <section id="home" className="hero">
+            <div className="hero-background">
+                <div className="gradient-orb orb-1"></div>
+                <div className="gradient-orb orb-2"></div>
+                <div className="gradient-orb orb-3"></div>
             </div>
-          </motion.div>
-        </motion.div>
-      </motion.div>
 
-      <motion.div
-        className="scroll-indicator"
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        onClick={() => {
-          const aboutElement = document.getElementById('about');
-          if (aboutElement) {
-            aboutElement.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
-      >
-        <div className="scroll-arrow"></div>
-      </motion.div>
-    </section>
-  );
+            <div className="hero-container">
+                <motion.div
+                    className="hero-content"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <motion.div
+                        className="hero-badge"
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                    >
+                        <span className="badge-dot"></span>
+                        SYSTEM ONLINE
+                    </motion.div>
+
+                    <motion.h1
+                        className="hero-title"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        NIKITA
+                    </motion.h1>
+
+                    <motion.h2
+                        className="hero-subtitle gradient-text"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                    >
+                        JUNIOR WEB DEVELOPER
+                    </motion.h2>
+
+                    <motion.p
+                        className="hero-username"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        @MalfyRose
+                    </motion.p>
+
+                    <motion.div
+                        className="hero-tags"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                    >
+                        <span className="tag tag-cyan">Cybersecurity</span>
+                        <span className="tag tag-magenta">React / TypeScript</span>
+                        <span className="tag tag-green">AI Integration</span>
+                    </motion.div>
+
+                    <motion.p
+                        className="hero-description"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.7 }}
+                    >
+                        Junior Web Developer & IT Project Initiator specializing in cybersecurity, web development, and AI integration.
+                        Conducting independent security research and working on innovative AI-powered projects.
+                    </motion.p>
+
+                    <motion.div
+                        className="hero-role-badge"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.8 }}
+                    >
+                        <div className="role-icon">AI</div>
+                        <div className="role-text">
+                            <div className="role-title">JUNIOR WEB DEVELOPER</div>
+                            <div className="role-subtitle">IT Project Initiator • Security Researcher</div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        className="hero-buttons"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.9 }}
+                    >
+                        <button className="btn btn-primary" onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}>
+                            VIEW PROJECTS
+                        </button>
+                        <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                            DOWNLOAD CV
+                        </a>
+                    </motion.div>
+
+                    <motion.div
+                        className="hero-social"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1 }}
+                    >
+                        {socialLinks.map((social, index) => (
+                            <motion.a
+                                key={index}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-link"
+                                whileHover={{ scale: 1.1, rotate: 5 }}
+                                whileTap={{ scale: 0.9 }}
+                                title={social.name}
+                            >
+                                {social.icon}
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                </motion.div>
+
+                <motion.div
+                    className="hero-image"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                    <div className="image-container">
+                        <div className="image-glow"></div>
+                        <img
+                            src="/images/photo_2025-09-29_19-18-24.jpg"
+                            alt="Nikita - Cybersecurity Specialist"
+                            className="profile-image"
+                        />
+                        <div className="image-overlay"></div>
+                    </div>
+                </motion.div>
+            </div>
+        </section>
+    );
 };
 
-export default Hero; 
+export default Hero;

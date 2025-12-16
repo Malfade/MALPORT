@@ -1,216 +1,174 @@
 import React, { useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaTelegram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaTelegram, FaPaperPlane } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.2 });
-  
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
     });
-  };
+    const [formStatus, setFormStatus] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    alert('Спасибо за сообщение! Я свяжусь с вами в ближайшее время.');
-    setFormData({ name: '', email: '', message: '' });
-  };
+    const handleInputChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.2
-      }
-    }
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormStatus('ОТПРАВКА...');
 
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
+        // Симуляция отправки
+        setTimeout(() => {
+            setFormStatus('СООБЩЕНИЕ ОТПРАВЛЕНО!');
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setFormStatus(''), 3000);
+        }, 1000);
+    };
 
-  const cardVariants = {
-    hidden: { scale: 0.9, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
+    const socialLinks = [
+        { name: 'GitHub', url: 'https://github.com/Malfade', icon: <FaGithub /> },
+        { name: 'LinkedIn', url: 'https://linkedin.com/in/nikita-cybersecurity', icon: <FaLinkedin /> },
+        { name: 'Telegram', url: 'https://t.me/MalfyRose', icon: <FaTelegram /> }
+    ];
 
-  return (
-    <section id="contact" className="contact" ref={ref}>
-      <motion.div
-        className="contact-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <motion.div className="contact-header" variants={itemVariants}>
-          <h2>Связаться со мной</h2>
-          <p>Готов обсудить ваш проект или предложение о работе</p>
-        </motion.div>
-
-        <div className="contact-content">
-          <motion.div className="contact-info" variants={itemVariants}>
-            <motion.div 
-              className="contact-card"
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <FaEnvelope className="contact-icon" />
-              <h3>Email</h3>
-              <p>nikitaundusk@gmail.com</p>
-            </motion.div>
-
-            <motion.div 
-              className="contact-card"
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <FaPhone className="contact-icon" />
-              <h3>Телефон</h3>
-              <p>+996 (550) 57 94 87</p>
-            </motion.div>
-
-            <motion.div 
-              className="contact-card"
-              variants={cardVariants}
-              whileHover="hover"
-            >
-              <FaMapMarkerAlt className="contact-icon" />
-              <h3>Локация</h3>
-              <p>Бишкек Кыргызстан</p>
-            </motion.div>
-
-            <motion.div className="social-links" variants={itemVariants}>
-              <h3>Социальные сети</h3>
-              <div className="social-icons">
-                <motion.a
-                  href="https://t.me/MalfyRose"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  whileTap={{ scale: 0.9 }}
+    return (
+        <section id="contact" className="contact section">
+            <div className="container">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
                 >
-                  <FaTelegram />
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/in/nikita-cybersecurity"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaLinkedin />
-                </motion.a>
-                <motion.a
-                  href="https://github.com/Malfade"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <FaGithub />
-                </motion.a>
-              </div>
-            </motion.div>
-          </motion.div>
+                    <h2 className="section-title" style={{ color: 'var(--color-purple)' }}>Contact</h2>
+                    <div className="section-divider" style={{ background: 'var(--color-purple)' }}></div>
+                </motion.div>
 
-          <motion.div className="contact-form" variants={itemVariants}>
-            <form onSubmit={handleSubmit}>
-              <motion.div 
-                className="form-group"
-                variants={itemVariants}
-              >
-                <label htmlFor="name">Имя</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </motion.div>
+                <div className="contact-grid">
+                    <motion.div
+                        className="contact-info"
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <div className="info-card glass">
+                            <h3 className="info-title">Let's Work Together!</h3>
+                            <p className="info-description">
+                                Open to new projects and collaboration opportunities. Reach out through the form
+                                or connect via social media.
+                            </p>
 
-              <motion.div 
-                className="form-group"
-                variants={itemVariants}
-              >
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </motion.div>
+                            <div className="social-links">
+                                {socialLinks.map((social, index) => (
+                                    <motion.a
+                                        key={index}
+                                        href={social.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="social-card glass"
+                                        whileHover={{ scale: 1.05, borderColor: 'var(--color-cyan)' }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        <div className="social-icon">{social.icon}</div>
+                                        <div className="social-name">{social.name}</div>
+                                    </motion.a>
+                                ))}
+                            </div>
 
-              <motion.div 
-                className="form-group"
-                variants={itemVariants}
-              >
-                <label htmlFor="message">Сообщение</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                ></textarea>
-              </motion.div>
+                            <div className="contact-details">
+                                <div className="detail-item">
+                                    <div className="detail-label">Email</div>
+                                    <div className="detail-value">nikitaundusk@gmail.com</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Phone</div>
+                                    <div className="detail-value">+996 550 57 94 87</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Location</div>
+                                    <div className="detail-value">Kyrgyzstan</div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
 
-              <motion.button
-                type="submit"
-                className="submit-btn"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Отправить сообщение
-              </motion.button>
-            </form>
-          </motion.div>
-        </div>
-      </motion.div>
-    </section>
-  );
+                    <motion.div
+                        className="contact-form-container"
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                        <form onSubmit={handleSubmit} className="contact-form glass">
+                            <div className="form-group">
+                                <label htmlFor="name">Имя</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    required
+                                    placeholder="Ваше имя"
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    required
+                                    placeholder="your@email.com"
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="message">Сообщение</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleInputChange}
+                                    required
+                                    rows="5"
+                                    placeholder="Ваше сообщение..."
+                                />
+                            </div>
+
+                            <motion.button
+                                type="submit"
+                                className="submit-button"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                            >
+                                <FaPaperPlane /> SEND MESSAGE
+                            </motion.button>
+
+                            {formStatus && (
+                                <motion.div
+                                    className="form-status"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    {formStatus}
+                                </motion.div>
+                            )}
+                        </form>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
-export default Contact; 
+export default Contact;

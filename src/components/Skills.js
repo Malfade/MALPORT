@@ -1,126 +1,78 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNode, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiFirebase, SiTailwindcss } from 'react-icons/si';
+import { motion } from 'framer-motion';
 import './Skills.css';
 
 const Skills = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.2 });
+    const skills = [
+        { name: 'React', level: 85, color: '#61dafb' },
+        { name: 'TypeScript', level: 80, color: '#3178c6' },
+        { name: 'JavaScript', level: 85, color: '#f7df1e' },
+        { name: 'Python', level: 70, color: '#3776ab' },
+        { name: 'HTML/CSS', level: 90, color: '#e34c26' },
+        { name: 'Responsive Design', level: 85, color: '#ff6b6b' },
+        { name: 'UX/UI Design', level: 75, color: '#a29bfe' },
+        { name: 'Network Security', level: 65, color: '#6c5ce7' },
+        { name: 'Wi-Fi Analysis', level: 70, color: '#8e44ad' },
+        { name: 'tcpdump', level: 65, color: '#e74c3c' },
+        { name: 'AI Integration', level: 75, color: '#00cec9' },
+        { name: 'Technical Writing', level: 85, color: '#fdcb6e' },
+        { name: 'Project Management', level: 75, color: '#2c3e50' }
+    ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const progressVariants = {
-    hidden: { width: 0 },
-    visible: (level) => ({
-      width: `${level}%`,
-      transition: {
-        duration: 1.5,
-        ease: "easeOut",
-        delay: 0.2
-      }
-    })
-  };
-
-  const skills = [
-    { name: 'React', level: 90, icon: FaReact, color: '#61DAFB' },
-    { name: 'JavaScript', level: 85, icon: FaJs, color: '#F7DF1E' },
-    { name: 'TypeScript', level: 80, icon: SiTypescript, color: '#3178C6' },
-    { name: 'HTML5', level: 95, icon: FaHtml5, color: '#E34F26' },
-    { name: 'CSS3', level: 90, icon: FaCss3Alt, color: '#1572B6' },
-    { name: 'Tailwind CSS', level: 85, icon: SiTailwindcss, color: '#06B6D4' },
-    { name: 'Node.js', level: 75, icon: FaNode, color: '#339933' },
-    { name: 'MongoDB', level: 70, icon: SiMongodb, color: '#47A248' },
-    { name: 'Firebase', level: 75, icon: SiFirebase, color: '#FFCA28' },
-    { name: 'Git', level: 85, icon: FaGitAlt, color: '#F05032' }
-  ];
-
-  return (
-    <section id="skills" className="skills" ref={ref}>
-      <motion.div
-        className="skills-container"
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-      >
-        <motion.div className="skills-header" variants={itemVariants}>
-          <h2>Навыки</h2>
-          <p>Технологии, которыми я владею</p>
-        </motion.div>
-
-        <motion.div className="skills-grid" variants={containerVariants}>
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              className="skill-item"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="skill-header">
-                <div className="skill-info">
-                  <skill.icon 
-                    className="skill-icon" 
-                    style={{ color: skill.color }}
-                  />
-                  <span className="skill-name">{skill.name}</span>
-                </div>
-                <span className="skill-level">{skill.level}%</span>
-              </div>
-              
-              <div className="skill-bar">
+    return (
+        <section id="skills" className="skills section">
+            <div className="container">
                 <motion.div
-                  className="skill-progress"
-                  variants={progressVariants}
-                  custom={skill.level}
-                  style={{ 
-                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)` 
-                  }}
-                />
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="section-title" style={{ color: 'var(--color-purple)' }}>Technical Skills</h2>
+                    <div className="section-divider" style={{ background: 'var(--color-purple)' }}></div>
+                </motion.div>
 
-        <motion.div className="skills-summary" variants={itemVariants}>
-          <div className="summary-card">
-            <h3>Frontend</h3>
-            <p>Современные фреймворки и библиотеки для создания интерактивных пользовательских интерфейсов</p>
-          </div>
-          <div className="summary-card">
-            <h3>Backend</h3>
-            <p>Серверные технологии для создания надежных и масштабируемых API</p>
-          </div>
-          <div className="summary-card">
-            <h3>Инструменты</h3>
-            <p>Современные инструменты разработки для эффективной работы в команде</p>
-          </div>
-        </motion.div>
-      </motion.div>
-    </section>
-  );
+                <div className="skills-grid">
+                    {skills.map((skill, index) => (
+                        <motion.div
+                            key={index}
+                            className="skill-card glass"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            whileHover={{ scale: 1.03, borderColor: skill.color }}
+                        >
+                            <div className="skill-header">
+                                <span className="skill-name" style={{ color: skill.color }}>
+                                    {skill.name.toUpperCase()}
+                                </span>
+                                <span className="skill-percentage" style={{
+                                    background: `linear-gradient(45deg, ${skill.color}, ${skill.color}80)`
+                                }}>
+                                    {skill.level}%
+                                </span>
+                            </div>
+
+                            <div className="skill-bar-container" style={{ borderColor: `${skill.color}30` }}>
+                                <motion.div
+                                    className="skill-bar"
+                                    style={{
+                                        background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)`,
+                                        boxShadow: `0 0 15px ${skill.color}`
+                                    }}
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: `${skill.level}%` }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: index * 0.05 + 0.2 }}
+                                />
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };
 
-export default Skills; 
+export default Skills;

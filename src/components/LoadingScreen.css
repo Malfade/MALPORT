@@ -1,608 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
-
-/* Основные стили экрана загрузки */
-.modern-loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  font-family: 'Orbitron', monospace;
-  color: #ffffff;
-  overflow: hidden;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Оптимизированный градиентный фон */
-.gradient-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    #0a0a0a 0%,
-    #1a1a2e 25%,
-    #16213e 50%,
-    #0f1629 75%,
-    #000000 100%
-  );
-  z-index: 1;
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 245, 255, 0.1) 0%,
-    rgba(255, 0, 128, 0.05) 50%,
-    transparent 100%
-  );
-  animation: pulse-overlay 4s ease-in-out infinite alternate;
-}
-
-@keyframes pulse-overlay {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.7; }
-}
-
-/* Оптимизированные частицы */
-.particles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  /* Оптимизация производительности */
-  will-change: transform;
-  contain: layout style paint;
-}
-
-.floating-particle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  filter: blur(0.5px);
-  box-shadow: 0 0 10px currentColor;
-  will-change: transform, opacity;
-  /* GPU ускорение */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Основной контейнер */
-.loading-container {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 900px;
-  width: 90%;
-  padding: 50px 40px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 245, 255, 0.2);
-  border-radius: 24px;
-  backdrop-filter: blur(20px);
-  box-shadow: 
-    0 0 40px rgba(0, 245, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-/* Современный заголовок */
-.modern-header {
-  margin-bottom: 40px;
-}
-
-.brand-badge {
-  display: inline-block;
-  padding: 8px 24px;
-  background: linear-gradient(45deg, #ff0080, #00f5ff);
-  color: #000000;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 2px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  text-shadow: none;
-  text-transform: uppercase;
-  box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
-}
-
-.main-title {
-  font-size: 32px;
-  font-weight: 900;
-  color: #00f5ff;
-  text-shadow: 0 0 20px #00f5ff;
-  margin: 0 0 15px 0;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: linear-gradient(45deg, #00f5ff, #ffffff, #00f5ff);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: text-shine 3s ease-in-out infinite;
-}
-
-.subtitle {
-  font-size: 14px;
-  color: #FFD700;
-  opacity: 0.9;
-  letter-spacing: 1px;
-  font-weight: 400;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-@keyframes text-shine {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* Улучшенный логотип */
-.modern-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.logo-circle {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(0, 245, 255, 0.1), transparent);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 
-    0 0 30px rgba(0, 245, 255, 0.3),
-    inset 0 0 30px rgba(0, 245, 255, 0.1);
-}
-
-.logo-inner {
-  width: 80px;
-  height: 80px;
-  border: 2px solid rgba(0, 245, 255, 0.6);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 0, 128, 0.05);
-  border-image: linear-gradient(45deg, #00f5ff, #ff0080) 1;
-}
-
-.logo-center {
-  font-size: 28px;
-  filter: drop-shadow(0 0 10px #FFD700);
-}
-
-.logo-text {
-  text-align: left;
-}
-
-.primary-text {
-  font-size: 28px;
-  font-weight: 900;
-  color: #00f5ff;
-  text-shadow: 0 0 15px #00f5ff;
-  letter-spacing: 2px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.secondary-text {
-  font-size: 14px;
-  color: #ff0080;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px #ff0080;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-/* Современная система статуса */
-.status-system {
-  margin: 30px 0;
-}
-
-.status-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
-
-.status-indicator:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(0, 245, 255, 0.2);
-}
-
-.indicator-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #333;
-  box-shadow: 0 0 10px currentColor;
-  transition: all 0.3s ease;
-}
-
-.indicator-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
-
-/* Современный прогресс бар */
-.progress-section {
-  margin: 40px 0;
-}
-
-.progress-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.progress-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.progress-value {
-  font-size: 14px;
-  font-weight: 700;
-  color: #00f5ff;
-  text-shadow: 0 0 10px #00f5ff;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.modern-progress-track {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #00f5ff, #ff0080, #00f5ff);
-  background-size: 200% 100%;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
-  animation: progress-flow 2s ease-in-out infinite;
-}
-
-.progress-highlight {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  animation: progress-shine 2s ease-in-out infinite;
-}
-
-@keyframes progress-flow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes progress-shine {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-/* Современный терминал */
-.terminal-section {
-  margin: 40px 0;
-}
-
-.terminal-window {
-  background: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(0, 245, 255, 0.3);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.terminal-header {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.terminal-controls {
-  display: flex;
-  gap: 8px;
-}
-
-.control-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.control-dot.red { background: #ff5f56; }
-.control-dot.yellow { background: #ffbd2e; }
-.control-dot.green { background: #27ca3f; }
-
-.terminal-title {
-  font-size: 12px;
-  color: #ffffff;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 600;
-}
-
-.terminal-content {
-  padding: 20px;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.terminal-line {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 24px;
-}
-
-.prompt {
-  color: #00ff41;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.command-output {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-}
-
-.cursor {
-  color: #00f5ff;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-/* Информационная панель */
-.info-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 16px 24px;
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  min-width: 120px;
-}
-
-.info-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 245, 255, 0.2);
-  border-color: rgba(0, 245, 255, 0.3);
-}
-
-.info-icon {
-  font-size: 20px;
-  filter: drop-shadow(0 0 8px currentColor);
-}
-
-.info-content {
-  text-align: left;
-}
-
-.info-label {
-  font-size: 10px;
-  color: #888;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-  font-weight: 600;
-}
-
-.info-value {
-  font-size: 14px;
-  color: #ffffff;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* Завершающее сообщение */
-.completion-message {
-  margin-top: 30px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #00ff41;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Адаптивный дизайн */
-@media (max-width: 768px) {
-  .loading-container {
-    padding: 30px 20px;
-    margin: 20px;
-  }
-
-  .main-title {
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-
-  .modern-logo {
-    gap: 20px;
-  }
-
-  .logo-circle {
-    width: 80px;
-    height: 80px;
-  }
-
-  .logo-inner {
-    width: 60px;
-    height: 60px;
-  }
-
-  .logo-center {
-    font-size: 20px;
-  }
-
-  .primary-text {
-    font-size: 20px;
-  }
-
-  .status-grid {
-    gap: 20px;
-  }
-
-  .status-indicator {
-    padding: 10px 16px;
-    min-width: 100px;
-  }
-
-  .info-grid {
-    gap: 15px;
-  }
-
-  .info-item {
-    padding: 12px 16px;
-    min-width: 100px;
-  }
-
-  .terminal-content {
-    padding: 15px;
-  }
-
-  .terminal-line {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .command-output {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .loading-container {
-    padding: 20px 15px;
-    margin: 10px;
-  }
-
-  .main-title {
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
-
-  .brand-badge {
-    font-size: 10px;
-    padding: 6px 16px;
-  }
-
-  .modern-logo {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .logo-circle {
-    width: 70px;
-    height: 70px;
-  }
-
-  .logo-inner {
-    width: 50px;
-    height: 50px;
-  }
-
-  .logo-center {
-    font-size: 18px;
-  }
-
-  .primary-text {
-    font-size: 18px;
-  }
-
-  .secondary-text {
-    font-size: 12px;
-  }
-
-  .status-grid {
-    flex-direction: column;
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+    display: flex;
     align-items: center;
-    gap: 15px;
-  }
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+}
 
-  .info-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .completion-message {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-
-  .terminal-header {
-    padding: 10px 15px;
-  }
-
-  .terminal-content {
-    padding: 12px;
-  }
-
-  .command-output {
-    font-size: 11px;
-  }
-
-  .progress-header {
-    flex-direction: column;
-    gap: 8px;
+.loading-content {
     text-align: center;
-  }
-} 
+    position: relative;
+    z-index: 2;
+}
+
+.loading-logo {
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.2em;
+    font-family: var(--font-mono);
+    margin-bottom: 3rem;
+}
+
+.loading-bar-container {
+    width: 400px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 auto 2rem;
+}
+
+.loading-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 20px var(--color-cyan);
+    transition: width 0.3s ease;
+}
+
+.loading-text {
+    color: var(--color-cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-family: var(--font-mono);
+}
+
+.loading-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.grid-line {
+    width: 100%;
+    height: 1px;
+    background: var(--color-cyan);
+    transform-origin: left;
+}
+
+@media (max-width: 768px) {
+    .loading-logo {
+        font-size: 3rem;
+    }
+
+    .loading-bar-container {
+        width: 300px;
+    }
+}
