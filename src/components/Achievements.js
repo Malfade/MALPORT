@@ -15,8 +15,11 @@ const Achievements = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title gradient-text-gold">Достижения</h2>
-                    <div className="section-divider" style={{ background: 'var(--gradient-gold)' }}></div>
+                    <h2 className="section-title">
+                        <span className="glitch-text">ACHIEVEMENTS UNLOCKED</span>
+                    </h2>
+                    <p className="section-subtitle">{'//'} MISSION COMPLETED</p>
+                    <div className="section-divider"></div>
                 </motion.div>
 
                 <div className="achievements-grid">

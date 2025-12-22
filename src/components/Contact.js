@@ -45,8 +45,11 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title" style={{ color: 'var(--color-purple)' }}>Contact</h2>
-                    <div className="section-divider" style={{ background: 'var(--color-purple)' }}></div>
+                    <h2 className="section-title">
+                        <span className="glitch-text">SECURE COMMUNICATION</span>
+                    </h2>
+                    <p className="section-subtitle">{'//'} ENCRYPTED CHANNEL</p>
+                    <div className="section-divider"></div>
                 </motion.div>
 
                 <div className="contact-grid">

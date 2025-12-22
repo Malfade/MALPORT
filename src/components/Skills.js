@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaShieldAlt, FaCode, FaNetworkWired, FaLock, FaBug, FaRobot } from 'react-icons/fa';
 import './Skills.css';
 
 const Skills = () => {
-    const skills = [
-        { name: 'React', level: 85, color: '#61dafb' },
-        { name: 'TypeScript', level: 80, color: '#3178c6' },
-        { name: 'JavaScript', level: 85, color: '#f7df1e' },
-        { name: 'Python', level: 70, color: '#3776ab' },
-        { name: 'HTML/CSS', level: 90, color: '#e34c26' },
-        { name: 'Responsive Design', level: 85, color: '#ff6b6b' },
-        { name: 'UX/UI Design', level: 75, color: '#a29bfe' },
-        { name: 'Network Security', level: 65, color: '#6c5ce7' },
-        { name: 'Wi-Fi Analysis', level: 70, color: '#8e44ad' },
-        { name: 'tcpdump', level: 65, color: '#e74c3c' },
-        { name: 'AI Integration', level: 75, color: '#00cec9' },
-        { name: 'Technical Writing', level: 85, color: '#fdcb6e' },
-        { name: 'Project Management', level: 75, color: '#2c3e50' }
+    const [activeCategory, setActiveCategory] = useState('all');
+
+    const skillCategories = [
+        { id: 'all', name: 'ALL SYSTEMS', icon: <FaShieldAlt /> },
+        { id: 'offensive', name: 'OFFENSIVE', icon: <FaBug /> },
+        { id: 'defensive', name: 'DEFENSIVE', icon: <FaLock /> },
+        { id: 'development', name: 'DEVELOPMENT', icon: <FaCode /> },
+        { id: 'network', name: 'NETWORK', icon: <FaNetworkWired /> },
+        { id: 'ai', name: 'AI/ML', icon: <FaRobot /> }
     ];
 
+    const skills = [
+        { name: 'React', category: 'development', level: 85, icon: '⚛️', description: 'Modern web applications' },
+        { name: 'TypeScript', category: 'development', level: 80, icon: '📘', description: 'Type-safe development' },
+        { name: 'JavaScript', category: 'development', level: 85, icon: '🟨', description: 'Core programming' },
+        { name: 'Python', category: 'development', level: 70, icon: '🐍', description: 'Scripting & automation' },
+        { name: 'Network Security', category: 'defensive', level: 65, icon: '🛡️', description: 'Security protocols' },
+        { name: 'Wi-Fi Analysis', category: 'offensive', level: 70, icon: '📡', description: 'Wireless penetration' },
+        { name: 'tcpdump', category: 'network', level: 65, icon: '📊', description: 'Packet analysis' },
+        { name: 'Penetration Testing', category: 'offensive', level: 68, icon: '🔓', description: 'Vulnerability assessment' },
+        { name: 'Firewall Config', category: 'defensive', level: 72, icon: '🔥', description: 'Network protection' },
+        { name: 'AI Integration', category: 'ai', level: 75, icon: '🤖', description: 'ML model deployment' }
+    ];
+
+    const filteredSkills = activeCategory === 'all'
+        ? skills
+        : skills.filter(skill => skill.category === activeCategory);
+
     return (
-        <section id="skills" className="skills section">
+        <section id="skills" className="skills section hex-pattern">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -28,48 +41,109 @@ const Skills = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title" style={{ color: 'var(--color-purple)' }}>Technical Skills</h2>
-                    <div className="section-divider" style={{ background: 'var(--color-purple)' }}></div>
+                    <h2 className="section-title">
+                        <span className="glitch-text">SECURITY ARSENAL</span>
+                    </h2>
+                    <p className="section-subtitle">{'//'} TOOLS & TECHNOLOGIES</p>
+                    <div className="section-divider"></div>
                 </motion.div>
 
-                <div className="skills-grid">
-                    {skills.map((skill, index) => (
-                        <motion.div
-                            key={index}
-                            className="skill-card glass"
+                {/* Category Filters */}
+                <motion.div
+                    className="category-filters"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                >
+                    {skillCategories.map((category, index) => (
+                        <motion.button
+                            key={category.id}
+                            className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                            onClick={() => setActiveCategory(category.id)}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ delay: 0.3 + index * 0.05 }}
+                        >
+                            <span className="category-icon">{category.icon}</span>
+                            <span className="category-name">{category.name}</span>
+                        </motion.button>
+                    ))}
+                </motion.div>
+
+                {/* Skills Grid */}
+                <div className="skills-grid">
+                    {filteredSkills.map((skill, index) => (
+                        <motion.div
+                            key={skill.name}
+                            className="skill-card glass-terminal"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
-                            whileHover={{ scale: 1.03, borderColor: skill.color }}
+                            whileHover={{ y: -5 }}
                         >
                             <div className="skill-header">
-                                <span className="skill-name" style={{ color: skill.color }}>
-                                    {skill.name.toUpperCase()}
-                                </span>
-                                <span className="skill-percentage" style={{
-                                    background: `linear-gradient(45deg, ${skill.color}, ${skill.color}80)`
-                                }}>
-                                    {skill.level}%
-                                </span>
+                                <div className="skill-icon">{skill.icon}</div>
+                                <div className="skill-info">
+                                    <h3 className="skill-name">{skill.name}</h3>
+                                    <p className="skill-description">{skill.description}</p>
+                                </div>
                             </div>
 
-                            <div className="skill-bar-container" style={{ borderColor: `${skill.color}30` }}>
-                                <motion.div
-                                    className="skill-bar"
-                                    style={{
-                                        background: `linear-gradient(90deg, ${skill.color}, ${skill.color}80)`,
-                                        boxShadow: `0 0 15px ${skill.color}`
-                                    }}
-                                    initial={{ width: 0 }}
-                                    whileInView={{ width: `${skill.level}%` }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 1, delay: index * 0.05 + 0.2 }}
-                                />
+                            <div className="skill-progress">
+                                <div className="progress-header">
+                                    <span className="progress-label">PROFICIENCY</span>
+                                    <span className="progress-value">{skill.level}%</span>
+                                </div>
+                                <div className="progress-bar-container">
+                                    <motion.div
+                                        className="progress-bar"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: `${skill.level}%` }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 1, delay: index * 0.05 + 0.3 }}
+                                    >
+                                        <div className="progress-glow"></div>
+                                    </motion.div>
+                                </div>
+                            </div>
+
+                            {/* Terminal-style status */}
+                            <div className="skill-status">
+                                <span className="status-dot pulse-glow"></span>
+                                <span className="status-text">OPERATIONAL</span>
                             </div>
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Stats Summary */}
+                <motion.div
+                    className="skills-stats"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                >
+                    <div className="stat-item glass-terminal">
+                        <div className="stat-value">{skills.length}</div>
+                        <div className="stat-label">TOTAL SKILLS</div>
+                    </div>
+                    <div className="stat-item glass-terminal">
+                        <div className="stat-value">
+                            {Math.round(skills.reduce((acc, skill) => acc + skill.level, 0) / skills.length)}%
+                        </div>
+                        <div className="stat-label">AVG PROFICIENCY</div>
+                    </div>
+                    <div className="stat-item glass-terminal">
+                        <div className="stat-value">{skillCategories.length - 1}</div>
+                        <div className="stat-label">CATEGORIES</div>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

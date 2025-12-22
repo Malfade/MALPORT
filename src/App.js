@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
+import ScanLine from './components/ScanLine';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <ScanLine speed={5} opacity={0.3} />
       <Navigation />
       <Hero />
       <About />
@@ -29,7 +31,7 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2024 Nikita - Cybersecurity Specialist. All rights reserved.</p>
+          <p>&copy; 2025 Malfade(Nikita) - Web Developer & Security Specialist. All rights reserved.</p>
           <p className="footer-tagline">Built with React & Framer Motion</p>
         </div>
       </footer>

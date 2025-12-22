@@ -7,7 +7,7 @@ const About = () => {
         {
             icon: 'AI',
             title: 'AI DEV STUDIO',
-            subtitle: 'Project Initiator / Junior PM',
+            subtitle: 'Project Initiator & Coordinator',
             description: 'Working in an innovative web studio that creates websites in 4-12 hours instead of months. Using AI to accelerate development and create premium quality products.',
             tags: ['4-12 hours', 'AI Development', 'Premium'],
             link: 'https://portfolio-ai-dev-team.netlify.app/',
@@ -50,7 +50,10 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="section-title gradient-text">Профиль</h2>
+                    <h2 className="section-title">
+                        <span className="glitch-text">USER PROFILE</span>
+                    </h2>
+                    <p className="section-subtitle">{'//'} SYSTEM INFORMATION</p>
                     <div className="section-divider"></div>
                 </motion.div>
 
@@ -74,7 +77,7 @@ const About = () => {
                                 АКТИВАЦИЯ ХАКАТОН-РЕЖИМА... ✓
                             </p>
                             <p className="intro-description">
-                                Junior Web Developer and IT Project Initiator with strong focus on cybersecurity,
+                                Web Developer and IT Project Initiator with strong focus on cybersecurity,
                                 web development, and AI integration. Currently working in an innovative AI-powered
                                 web studio and conducting independent security research.
                                 <br /><br />
