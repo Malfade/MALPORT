@@ -21,10 +21,8 @@ const Skills = () => {
         { name: 'JavaScript', category: 'development', level: 85, icon: '🟨', description: 'Core programming' },
         { name: 'Python', category: 'development', level: 70, icon: '🐍', description: 'Scripting & automation' },
         { name: 'Network Security', category: 'defensive', level: 65, icon: '🛡️', description: 'Security protocols' },
-        { name: 'Wi-Fi Analysis', category: 'offensive', level: 70, icon: '📡', description: 'Wireless penetration' },
         { name: 'tcpdump', category: 'network', level: 65, icon: '📊', description: 'Packet analysis' },
         { name: 'Penetration Testing', category: 'offensive', level: 68, icon: '🔓', description: 'Vulnerability assessment' },
-        { name: 'Firewall Config', category: 'defensive', level: 72, icon: '🔥', description: 'Network protection' },
         { name: 'AI Integration', category: 'ai', level: 75, icon: '🤖', description: 'ML model deployment' }
     ];
 

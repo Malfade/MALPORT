@@ -55,16 +55,16 @@ const Contact = () => {
                 <div className="contact-grid">
                     <motion.div
                         className="contact-info"
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <div className="info-card glass">
                             <h3 className="info-title">Let's Work Together!</h3>
                             <p className="info-description">
-                                Open to new projects and collaboration opportunities. Reach out through the form
-                                or connect via social media.
+                                Open to new projects and collaboration opportunities. Reach out
+                                directly through the channels below or connect via social media.
                             </p>
 
                             <div className="social-links">
@@ -99,74 +99,6 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
-
-                    <motion.div
-                        className="contact-form-container"
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <form onSubmit={handleSubmit} className="contact-form glass">
-                            <div className="form-group">
-                                <label htmlFor="name">Имя</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    required
-                                    placeholder="Ваше имя"
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    required
-                                    placeholder="your@email.com"
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="message">Сообщение</label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    required
-                                    rows="5"
-                                    placeholder="Ваше сообщение..."
-                                />
-                            </div>
-
-                            <motion.button
-                                type="submit"
-                                className="submit-button"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                <FaPaperPlane /> SEND MESSAGE
-                            </motion.button>
-
-                            {formStatus && (
-                                <motion.div
-                                    className="form-status"
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
-                                    {formStatus}
-                                </motion.div>
-                            )}
-                        </form>
                     </motion.div>
                 </div>
             </div>

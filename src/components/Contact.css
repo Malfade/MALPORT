@@ -3,10 +3,14 @@
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-info {
+    max-width: 800px;
+    width: 100%;
 }
 
 .info-card {
@@ -168,5 +172,61 @@
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+
+    .info-card {
+        padding: 2rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .info-title {
+        font-size: 1.75rem;
+    }
+
+    .detail-item {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .info-title {
+        font-size: 1.5rem;
+    }
+
+    .social-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+    }
+
+    .social-name {
+        font-size: 1rem;
+    }
+
+    .detail-item {
+        padding: 1rem;
+    }
+
+    .detail-value {
+        font-size: 1rem;
+    }
+
+    .submit-button {
+        padding: 1rem;
+        font-size: 0.9rem;
     }
 }

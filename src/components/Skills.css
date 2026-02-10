@@ -119,6 +119,7 @@
     font-size: 0.85rem;
     color: var(--color-text-tertiary);
     margin: 0;
+    word-break: break-word;
 }
 
 /* Progress Bar */
@@ -259,6 +260,7 @@
 
     .skills-grid {
         grid-template-columns: 1fr;
+        /* Full width on mobile */
         gap: 1.5rem;
     }
 
@@ -280,20 +282,32 @@
 }
 
 @media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
     .category-btn {
         padding: 0.5rem 0.75rem;
         font-size: 0.7rem;
+        flex: 1 1 auto;
+        /* Allow buttons to shrink */
+        justify-content: center;
     }
 
     .category-name {
-        display: none;
+        display: inline;
+        /* Keep name visible if possible, or use smaller font */
     }
 
     .skill-card {
-        padding: 1rem;
+        padding: 1.25rem;
     }
 
     .stat-value {
         font-size: 2rem;
+    }
+
+    .skills-stats {
+        gap: 1rem;
     }
 }

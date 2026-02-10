@@ -395,6 +395,8 @@
 @media (max-width: 1200px) {
     .hero-container {
         gap: 4rem;
+        grid-template-columns: 1fr 1fr;
+        /* Explicitly keep 2 columns here */
     }
 
     .image-container {
@@ -413,35 +415,59 @@
 }
 
 @media (max-width: 968px) {
+    .hero {
+        padding-top: 100px;
+        /* More space for fixed header */
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 2rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+        padding: 0 1.5rem;
     }
 
     .hero-content {
         align-items: center;
+        order: 2;
+        /* Image on top */
+    }
+
+    .hero-image {
+        order: 1;
     }
 
     .clearance-badge {
         justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .terminal-prompt {
-        text-align: left;
+        text-align: center;
+        width: 100%;
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
+        line-height: 1.1;
     }
 
     .hero-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .hero-tags {
+        justify-content: center;
+        /* Center tags */
     }
 
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     .hero-social {
@@ -449,90 +475,81 @@
     }
 
     .image-container {
-        width: 350px;
-        height: 350px;
+        width: 320px;
+        height: 320px;
     }
 
     .image-wrapper {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+        width: 280px;
+        height: 280px;
     }
 
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .clearance-badge {
-        padding: 0.75rem 1rem;
-    }
-
-    .clearance-icon {
-        font-size: 1.5rem;
-    }
-
-    .clearance-level {
-        font-size: 0.75rem;
-    }
-
-    .clearance-status {
-        font-size: 0.65rem;
-    }
-
-    .image-container {
-        width: 300px;
-        height: 300px;
-    }
-
-    .image-wrapper {
-        width: 250px;
-        height: 250px;
+    .scroll-indicator {
+        display: none;
+        /* Hide on mobile to save space */
     }
 }
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .clearance-badge {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .clearance-info {
+        text-align: left;
     }
 
     .terminal-prompt {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .hero-username {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .tag {
-        padding: 0.5rem 1rem;
-        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
     }
 
     .image-container {
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
 
     .image-wrapper {
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 240px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        width: 100%;
+        gap: 1rem;
     }
 
     .btn {
         width: 100%;
+        justify-content: center;
+    }
+
+    .hero-social {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }

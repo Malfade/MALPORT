@@ -5,30 +5,30 @@ import './About.css';
 const About = () => {
     const activities = [
         {
-            icon: 'AI',
-            title: 'AI DEV STUDIO',
-            subtitle: 'Project Initiator & Coordinator',
-            description: 'Working in an innovative web studio that creates websites in 4-12 hours instead of months. Using AI to accelerate development and create premium quality products.',
-            tags: ['4-12 hours', 'AI Development', 'Premium'],
-            link: 'https://portfolio-ai-dev-team.netlify.app/',
+            icon: 'AS',
+            title: 'ALAYSOFT',
+            subtitle: 'AppSec Specialist',
+            description: 'Responsible for application security, vulnerability assessment, and ensuring secure development lifecycle since November 2025.',
+            tags: ['AppSec', 'Security Audit', 'SSDLC'],
+            link: 'https://www.alaysoft.space/',
             gradient: 'linear-gradient(45deg, #00f5ff, #ff0080)'
+        },
+        {
+            icon: 'BL',
+            title: 'BEELINE',
+            subtitle: 'SOC Intern',
+            description: 'Internship in the Security Operations Center (SOC), focusing on threat monitoring, incident response, and security analysis since February 2026.',
+            tags: ['SOC', 'Monitoring', 'Incidents'],
+            link: 'https://beeline.kg/',
+            gradient: 'linear-gradient(45deg, #ff0080, #ff6b35)'
         },
         {
             icon: 'SW',
             title: 'SOLARWINDS RESEARCH',
             subtitle: 'Independent Research',
-            description: 'Comprehensive analysis of the SolarWinds cyberattack (SUNBURST/Solorigate). Focused on attack vectors, supply-chain compromise, persistence mechanisms, and defensive lessons.',
+            description: 'Comprehensive analysis of the SolarWinds cyberattack (SUNBURST/Solorigate). Focused on attack vectors, supply-chain compromise, and persistence mechanisms.',
             tags: ['Cybersecurity', 'Supply Chain', 'Analysis'],
             link: 'https://docs.google.com/document/d/e/2PACX-1vQcBAlsTchlIsHbuysKDqxeouSDJSWD5JdrL2YLnE_8TgXZdRhkG5AXFbpwFVnaDILwVk1He3rl_do0/pub',
-            gradient: 'linear-gradient(45deg, #ff0080, #ff6b35)'
-        },
-        {
-            icon: 'FP',
-            title: 'FPV DRONE COUNTERMEASURES',
-            subtitle: 'Technical Research',
-            description: 'Research on technical and tactical approaches to FPV-drone detection, suppression, and counteraction. Exploring modern defense technologies.',
-            tags: ['Defense Tech', 'Research', 'Innovation'],
-            link: 'https://docs.google.com/document/d/e/2PACX-1vQjBM0TUDctGa9L5C4BUyVWvKBDCbjVWJmrM84M1rl2ISrAyLyGZ5LH8r9zh6g-qKPHd8iljZvWmr_U/pub',
             gradient: 'linear-gradient(45deg, #00ff41, #00f5ff)'
         }
     ];

@@ -189,12 +189,15 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+        padding: 0 1rem;
     }
+}
 
+@media (max-width: 768px) {
     .project-card-3d {
         height: 550px;
     }
@@ -210,8 +213,15 @@
 }
 
 @media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Force single column */
+    }
+
     .project-card-3d {
-        height: 500px;
+        height: auto;
+        /* Allow auto height for content */
+        min-height: 500px;
     }
 
     .project-title {
@@ -220,10 +230,15 @@
 
     .card-front,
     .card-back {
-        padding: 1rem;
+        padding: 1.25rem;
     }
 
     .project-links {
         flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .project-links .btn {
+        width: 100%;
     }
 }

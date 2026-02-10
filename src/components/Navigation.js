@@ -5,6 +5,7 @@ import './Navigation.css';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [securityLevel] = useState(5);
 
@@ -61,13 +62,14 @@ const Navigation = () => {
         </div>
 
         {/* Navigation Items */}
-        <ul className="nav-menu">
+        <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
             <motion.li
               key={index}
               className="nav-item"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setMobileMenuOpen(false)}
             >
               <a
                 href={item.href}
@@ -99,7 +101,11 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="mobile-menu-btn">
+        <button
+          className={`mobile-menu-btn ${mobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
           <span></span>
           <span></span>
           <span></span>
