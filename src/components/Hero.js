@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTelegram, FaShieldAlt } from 'react-icons/fa';
+import { FaGithub, FaTelegram, FaShieldAlt } from 'react-icons/fa';
 import MatrixRain from './MatrixRain';
 import TerminalText from './TerminalText';
 import GlitchText from './GlitchText';

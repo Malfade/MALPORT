@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './LoadingScreen.css';
 
+const messages = [
+    '> INITIALIZING SYSTEM...',
+    '> LOADING SECURITY PROTOCOLS...',
+    '> ESTABLISHING SECURE CONNECTION...',
+    '> DECRYPTING USER DATA...',
+    '> VERIFYING CREDENTIALS...',
+    '> LOADING CYBERSECURITY MODULES...',
+    '> ACTIVATING FIREWALL...',
+    '> SYSTEM READY',
+    '> ACCESS GRANTED'
+];
+
 const LoadingScreen = ({ onLoadingComplete }) => {
     const [progress, setProgress] = useState(0);
     const [bootMessages, setBootMessages] = useState([]);
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-
-    const messages = [
-        '> INITIALIZING SYSTEM...',
-        '> LOADING SECURITY PROTOCOLS...',
-        '> ESTABLISHING SECURE CONNECTION...',
-        '> DECRYPTING USER DATA...',
-        '> VERIFYING CREDENTIALS...',
-        '> LOADING CYBERSECURITY MODULES...',
-        '> ACTIVATING FIREWALL...',
-        '> SYSTEM READY',
-        '> ACCESS GRANTED'
-    ];
 
     useEffect(() => {
         // Progress bar animation
@@ -44,7 +44,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
             return () => clearTimeout(messageTimeout);
         }
-    }, [currentMessageIndex, messages]);
+    }, [currentMessageIndex]);
 
     useEffect(() => {
         // Complete loading when progress reaches 100%

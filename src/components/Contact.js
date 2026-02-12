@@ -1,35 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTelegram, FaPaperPlane } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-    const [formStatus, setFormStatus] = useState('');
-
-    const handleInputChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setFormStatus('ОТПРАВКА...');
-
-        // Симуляция отправки
-        setTimeout(() => {
-            setFormStatus('СООБЩЕНИЕ ОТПРАВЛЕНО!');
-            setFormData({ name: '', email: '', message: '' });
-            setTimeout(() => setFormStatus(''), 3000);
-        }, 1000);
-    };
-
     const socialLinks = [
         { name: 'GitHub', url: 'https://github.com/Malfade', icon: <FaGithub /> },
         { name: 'LinkedIn', url: 'https://linkedin.com/in/nikita-cybersecurity', icon: <FaLinkedin /> },
